@@ -47,8 +47,6 @@ function under50(num) {
 function over50(num) {
     return num > 50;
 }
-
-
 val = numbers.find(over50);
 console.log(numbers);
 console.log(val);
