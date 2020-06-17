@@ -21,8 +21,6 @@ document.querySelector('form').addEventListener('submit',
             tasks = JSON.parse(localStorage.getItem('tasks'));
         }
         tasks.push(task);
-
-
         localStorage.setItem('tasks', JSON.stringify(tasks));
         alert('task saved');
         e.preventDefault();
