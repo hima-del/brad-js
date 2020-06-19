@@ -32,7 +32,7 @@ guessBtn.addEventListener('click', function() {
         // //disable input
         // guessInput.disabled = true;
         // //change border color
-        guessInput.style.borderColor = 'green';
+        // guessInput.style.borderColor = 'green';
         // //set message
         // setMessage(`${winningNum} is correct,YOU WIN!`, 'green');
     } else {
@@ -58,7 +58,7 @@ function gameOver(won, msg) {
     //disable input
     guessInput.disabled = true;
     //change border color
-    guessInput.style.borderColor = 'color';
+    guessInput.style.borderColor = color;
     //set text color
     message.style.color = color;
     //set message
