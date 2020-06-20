@@ -6,7 +6,6 @@ const personPrototypes = {
         this.lastName = newLastName;
     }
 }
-
 const mary = Object.create(personPrototypes);
 mary.firstName = 'Mary';
 mary.lastName = 'John';
