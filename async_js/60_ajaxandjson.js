@@ -3,7 +3,7 @@ document.getElementById('button2').addEventListener('click', loadCustomers);
 //load customer
 function loadCustomer(e) {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'customer.json', true);
+    xhr.open('GET', '60_customer.json', true);
     xhr.onload = function() {
         if (this.status === 200) {
             // console.log(this.responseText);
@@ -24,7 +24,7 @@ function loadCustomer(e) {
 //load customers
 function loadCustomers(e) {
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'customers.json', true);
+    xhr.open('GET', '60_customers.json', true);
     xhr.onload = function() {
         if (this.status === 200) {
             // console.log(this.responseText);

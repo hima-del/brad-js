@@ -4,7 +4,7 @@ function loadData() {
     //cretae xhr object
     const xhr = new XMLHttpRequest();
     //OPEN
-    xhr.open('GET', 'data.txt', true);
+    xhr.open('GET', '59_data.txt', true);
     // console.log('READYSTATE', xhr.readyState);
     //optional -used for spinners / loaders
     xhr.onprogress = function() {
