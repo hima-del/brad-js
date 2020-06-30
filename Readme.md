@@ -7,6 +7,18 @@
 **Instance of operator**
 * The instanceof operator tests whether the prototype property of a constructor appears anywhere in the prototype chain of an object.
 
+**Regular Expressions**
+* exec() : The exec() method executes a search for a match in a specified string. Returns a result array, or null.
+```
+const result1 = re.exec('hello');
+const result2 = re.exec('good hello world');
+const result3 = re.exec('hi john');
+console.log(result1);
+console.log(result2);
+console.log(result3);
+```
+* The output for above code is "hello", index: 0, input: "hello","hello", index: 5, input: "good hello world", null
+
 **Types of nodes**
 * Element node: An element, as it exists in the DOM.
 * Root node: The top node in the tree, which in the case of HTML is always the HTML node.
