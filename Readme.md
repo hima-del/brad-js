@@ -18,6 +18,9 @@ console.log(result2);
 console.log(result3);
 ```
 * The output for above code is "hello", index: 0, input: "hello","hello", index: 5, input: "good hello world", null
+*  match() : Retrieves the result of matching a string against a regular expression.
+
+
 
 **Types of nodes**
 * Element node: An element, as it exists in the DOM.
