@@ -67,6 +67,7 @@ console.log(result3);
 const symbol = Symbol('description')
 ```
 * Every time we call the factory function, a new and unique symbol is created
-```Symbol() === Symbol()
+```
+Symbol() === Symbol()
 ```
    This will return false
