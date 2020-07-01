@@ -58,3 +58,15 @@ console.log(result3);
 * The next() method must always return an object with appropriate properties including done and value. 
 * If a non-object value gets returned (such as false or undefined), a TypeError ("iterator.next() returned a non-object value") will be thrown.
 * Once created, an iterator object can be iterated explicitly by repeatedly calling next().
+
+**Symbols**
+* Symbols are new primitive type introduced in ES6.
+* Symbols are completely unique identifiers. 
+* Just like their primitive counterparts (Number, String, Boolean), they can be created using the factory function Symbol() which returns a Symbol.
+```
+const symbol = Symbol('description')
+```
+* Every time we call the factory function, a new and unique symbol is created
+```Symbol() === Symbol()
+```
+   This will return false
