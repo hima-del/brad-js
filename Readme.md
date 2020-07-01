@@ -46,3 +46,15 @@ console.log(result3);
 * Parent node: A node which has another node inside it. For example, BODY is the parent node of SECTION in the above example.
 * Sibling nodes: Nodes that sit on the same level in the DOM tree. For example, IMG and P are siblings in the above example.
 * Text node: A node containing a text string.
+
+**Iterator**
+* An iterator is any object which implements the Iterator protocol by having a next() method that returns an object with two properties
+* The iterator protocol defines a standard way to produce a sequence of values (either finite or infinite), and potentially a return value when all values have been generated.
+* An object is an iterator when it implements a next() method 
+* next() : A zero-argument function that returns an object with at least the following two properties:
+  * done (boolean) : Has the value false if the iterator was able to produce the next value in the sequence. (This is equivalent to not specifying the done property altogether.)
+    Has the value true if the iterator has completed its sequence. In this case, value optionally specifies the return value of the iterator.
+  * value : Any JavaScript value returned by the iterator. Can be omitted when done is true.
+* The next() method must always return an object with appropriate properties including done and value. 
+* If a non-object value gets returned (such as false or undefined), a TypeError ("iterator.next() returned a non-object value") will be thrown.
+* Once created, an iterator object can be iterated explicitly by repeatedly calling next().
