@@ -71,3 +71,10 @@ const symbol = Symbol('description')
 Symbol() === Symbol()
 ```
    This will return false
+  
+  
+  **Set in ES6**
+   * set() Creates a new Set object.
+   * The Set obSet objects are collections of values. 
+   * We can iterate through the elements of a set in insertion order. 
+   * A value in the Set may only occur once; it is unique in the Set's collection. 
