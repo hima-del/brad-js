@@ -92,7 +92,9 @@ Symbol() === Symbol()
    * Playing with promises has 2 parts-
       * Creation of Promises
       * Handling of Promises
+      
       **Creation**
+      
       * The executing function(executor) accepts two parameters resolve and reject which in turn are callback functions.
       * Promises are used for handling asynchronous operations also called blocking code, examples of which are DB, I/O or API calls, which are carried out by the executor               function. 
       * Once that completes it either calls resolve on success or reject function on error.
