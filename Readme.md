@@ -78,3 +78,30 @@ Symbol() === Symbol()
    * The Set obSet objects are collections of values. 
    * We can iterate through the elements of a set in insertion order. 
    * A value in the Set may only occur once; it is unique in the Set's collection. 
+   
+   **ES6 Promise**
+   * A Promise is a proxy for a value not necessarily known when the promise is created
+   * A Promise is in one of these states:
+       * pending: initial state, neither fulfilled nor rejected.
+       * fulfilled: meaning that the operation completed successfully.
+       * rejected: meaning that the operation failed.
+   * A pending promise can either be fulfilled with a value, or rejected with a reason (error)
+   
+   **then() method**
+   * The then() method returns a Promise. 
+   * It takes up to two arguments: callback functions for the success and failure cases of the Promise.
+   ```
+   let p1 = new Promise((resolve, reject) => {
+  resolve('Success!');
+  // or
+  // reject(new Error("Error!"));
+});
+
+p1.then(value => {
+  console.log(value); // Success!
+}, reason => {
+  console.error(reason); // Error!
+});
+```
+
+   
