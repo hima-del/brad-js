@@ -80,6 +80,28 @@ Symbol() === Symbol()
    * A value in the Set may only occur once; it is unique in the Set's collection. 
    
    **ES6 Promise**
+   * Promises in javascript are very similar to promises made in real life
+   * Playing with promises has 2 parts-
+      * Creation of Promises
+      * Handling of Promises
+      **Creation**
+      * The executing function(executor) accepts two parameters resolve and reject which in turn are callback functions.
+      * Promises are used for handling asynchronous operations also called blocking code, examples of which are DB, I/O or API calls, which are carried out by the executor               function. 
+      * Once that completes it either calls resolve on success or reject function on error.
+      * As it can be seen, Promises don’t return values immediately.
+      * It waits for the success or failure and then returns accordingly. 
+      * This lets asynchronous methods return values like synchronous ones. 
+      * Instead of returning values right away, async methods supply a promise to return the value.
+      
+      ```
+      let promise = new Promise(function(resolve, reject) {
+      if(promise_kept)
+      resolve("done");
+      else
+      reject(new Error("…"));
+       });
+       ```
+     
    * A Promise is a proxy for a value not necessarily known when the promise is created
    * A Promise is in one of these states:
        * pending: initial state, neither fulfilled nor rejected.
@@ -104,4 +126,33 @@ p1.then(value => {
 });
 ```
 
-   
+
+**Async Await**
+* Async and Await are extensions of promises
+**async**
+* Async functions enable us to write promise based code as if it were synchronous, but without blocking the execution thread.
+* It operates asynchronously via the event-loop. 
+* Async functions will always return a value.
+* Using async simply implies that a promise will be returned, and if a promise is not returned, JavaScript automatically wraps it in a resolved promise with its value.
+**Await**
+* The await operator is used to wait for a Promise. 
+* It can be used inside an Async block only. 
+* The keyword Await makes JavaScript wait until the promise returns a result. 
+* It has to be noted that it only makes the async function block wait and not the whole program execution.
+```
+async function firstAsync() {
+    let promise = new Promise((res, rej) => {
+        setTimeout(() => res("Now it's done!"), 1000)
+    });
+
+    // wait until the promise returns us a value
+    let result = await promise; 
+  
+    // "Now it's done!"
+    alert(result); 
+    }
+};
+firstAsync();
+```
+
+
