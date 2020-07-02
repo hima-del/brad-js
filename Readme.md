@@ -1,13 +1,16 @@
 **Try and Catch**
+
 * The try statement : test a block of code for errors.
 * The catch statement : handle the error.
 * The throw statement : create custom errors.
 * The finally statement : execute code, after try and catch, regardless of the result.
 
 **Instance of operator**
+
 * The instanceof operator tests whether the prototype property of a constructor appears anywhere in the prototype chain of an object.
 
 **Regular Expressions**
+
 * exec() : The exec() method executes a search for a match in a specified string. Returns a result array, or null.
 ```
 const result1 = re.exec('hello');
@@ -23,6 +26,7 @@ console.log(result3);
 
 
 **Types of nodes**
+
 * Element node: An element, as it exists in the DOM.
 * Root node: The top node in the tree, which in the case of HTML is always the HTML node.
 * Child node: A node directly inside another node. For example,
@@ -48,6 +52,7 @@ console.log(result3);
 * Text node: A node containing a text string.
 
 **Iterator**
+
 * An iterator is any object which implements the Iterator protocol by having a next() method that returns an object with two properties
 * The iterator protocol defines a standard way to produce a sequence of values (either finite or infinite), and potentially a return value when all values have been generated.
 * An object is an iterator when it implements a next() method 
@@ -60,6 +65,7 @@ console.log(result3);
 * Once created, an iterator object can be iterated explicitly by repeatedly calling next().
 
 **Symbols**
+
 * Symbols are new primitive type introduced in ES6.
 * Symbols are completely unique identifiers. 
 * Just like their primitive counterparts (Number, String, Boolean), they can be created using the factory function Symbol() which returns a Symbol.
@@ -74,13 +80,15 @@ Symbol() === Symbol()
   
   
   **Set in ES6**
+   
    * set() Creates a new Set object.
    * The Set obSet objects are collections of values. 
    * We can iterate through the elements of a set in insertion order. 
    * A value in the Set may only occur once; it is unique in the Set's collection. 
    
    **ES6 Promise**
-   * Promises in javascript are very similar to promises made in real life
+  
+  * Promises in javascript are very similar to promises made in real life
    * Playing with promises has 2 parts-
       * Creation of Promises
       * Handling of Promises
@@ -110,7 +118,8 @@ Symbol() === Symbol()
    * A pending promise can either be fulfilled with a value, or rejected with a reason (error)
    
    **then() method**
-   * The then() method returns a Promise. 
+  
+  * The then() method returns a Promise. 
    * It takes up to two arguments: callback functions for the success and failure cases of the Promise.
    ```
    let p1 = new Promise((resolve, reject) => {
@@ -128,13 +137,18 @@ p1.then(value => {
 
 
 **Async Await**
+
 * Async and Await are extensions of promises
+
 **async**
+
 * Async functions enable us to write promise based code as if it were synchronous, but without blocking the execution thread.
 * It operates asynchronously via the event-loop. 
 * Async functions will always return a value.
 * Using async simply implies that a promise will be returned, and if a promise is not returned, JavaScript automatically wraps it in a resolved promise with its value.
+
 **Await**
+
 * The await operator is used to wait for a Promise. 
 * It can be used inside an Async block only. 
 * The keyword Await makes JavaScript wait until the promise returns a result. 
