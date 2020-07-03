@@ -170,5 +170,11 @@ async function firstAsync() {
 };
 firstAsync();
 ```
+**Difference between innerText and textContent**
+* Although the names seem similar, there are important differences:
+* textContent gets the content of all elements, including <script> and <style> elements.  
+* In contrast, innerText only shows “human-readable” elements.
+* textContent returns every element in the node. In contrast, innerText is aware of styling and won’t return the text of “hidden” elements.
+  
 
 
