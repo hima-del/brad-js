@@ -226,6 +226,25 @@ console.log(array1.reduce(reducer, 5));
 
 ```
 
+**Rest and Spread operators**
+
+* Rest Parameter is collecting all remaining elements into an array .
+```
+let myName = ["Marina" , "Magdy" , "Shafiq"] ;
+const [firstName , ...familyName] = myName ;
+console.log(firstName); // Marina ;
+console.log(familyName); // [ "Magdy" , "Shafiq"] ;
+```
+
+* Spread Operator is unpacking collected elements such as arrays into single elements .
+```
+let myName = ["Marina" , "Magdy" , "Shafiq"];
+var newArr = [...myName ,"FrontEnd" , 24];
+console.log(newArr) ; // ["Marina" , "Magdy" , "Shafiq" , "FrontEnd" , 24 ] ;
+```
+
+
+
   
   
 
