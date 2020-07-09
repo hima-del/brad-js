@@ -27,14 +27,14 @@ async function getRandomUser() {
 // Add new obj todata arr
 function addData(obj) {
     data.push(obj);
-    updateDOM();
+    updateDOM(data);
 }
 
 // Update DOM
-function updateDOM(providedData = data) {
+function updateDOM(data1) {
     // Clear main div
     main.innerHTML = ' <h2><strong>Person</strong>Wealth</h2>';
-    providedData.forEach((item => {
+    data1.forEach((item => {
         const element = document.createElement('div');
         element.classList.add('person');
         element.innerHTML = `<strong>${item.name}</strong>${formatMoney(item.money)} `;
