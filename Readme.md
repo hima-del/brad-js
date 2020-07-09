@@ -182,7 +182,49 @@ firstAsync();
 * The forEach() method executes a provided function once for each array element.
 * forEach() does not mutate the array on which it is called
 
+**sort()**
 
+* The sort() method sorts the elements of an array in place and returns the sorted array. 
+* The default sort order is ascending, built upon converting the elements into strings, then comparing their sequences of UTF-16 code units values.
+```
+const months = ['March', 'Jan', 'Feb', 'Dec'];
+months.sort();
+console.log(months);
+// expected output: Array ["Dec", "Feb", "Jan", "March"]
+
+const array1 = [1, 30, 4, 21, 100000];
+array1.sort();
+console.log(array1);
+// expected output: Array [1, 100000, 21, 30, 4]
+```
+
+**filter()**
+
+* The filter() method creates a new array with all elements that pass the test implemented by the provided function.
+```const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.filter(word => word.length > 6);
+
+console.log(result);
+// expected output: Array ["exuberant", "destruction", "present"]
+```
+
+**reduce()**
+
+* The reduce() method executes a reducer function (that you provide) on each element of the array, resulting in single output value.
+```
+const array1 = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => accumulator + currentValue;
+
+// 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer));
+// expected output: 10
+
+// 5 + 1 + 2 + 3 + 4
+console.log(array1.reduce(reducer, 5));
+// expected output: 15
+
+```
 
   
   
