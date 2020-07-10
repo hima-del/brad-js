@@ -1,17 +1,20 @@
 let incomeNumber = 0;
+let removedNumber = 0;
 let expenseNumber = 0;
 const btn = document.querySelector('.btn');
 btn.addEventListener('click', addTransaction);
 const listUl = document.getElementById('list');
 listUl.addEventListener('click', deleteData);
+let history = document.getElementById('list').querySelectorAll('li');
 
 function addTransaction(e) {
     const form = document.getElementById('form');
-    const history = document.getElementById('list');
+    //const history = document.getElementById('list');
     updateIncomeAndExpense();
     updateBalance();
     addHistory();
-    // deleteData();
+    document.getElementById('amount').value = '';
+    document.getElementById('text').value = '';
     e.preventDefault();
 }
 
@@ -85,12 +88,38 @@ function addHistory() {
 }
 
 function deleteData(e) {
+    const income = document.getElementById('money-plus');
+    const expense = document.getElementById('money-minus');
+    const amount = document.getElementById('amount');
+    let amountNumber = parseFloat(amount.value);
+    const balance = document.getElementById('balance');
     if (e.target.parentElement.classList === 'delete-btn'); {
         //console.log(e.target.parentElement.parentElement);
         if (confirm('are you sure')) {
             e.target.parentElement.parentElement.remove();
+            let removedNumber = e.target.parentElement.previousSibling.textContent;
+            // console.log(incomeNumber);
+            console.log(removedNumber);
+            if (removedNumber > 0) {
+                incomeNumber = incomeNumber - removedNumber;
+                income.innerText = incomeNumber;
+            } else {
+                expenseNumber = expenseNumber - removedNumber;
+                expense.innerText = expenseNumber;
+            }
+            console.log(incomeNumber);
+            console.log(expenseNumber);
+            let balanceNumber = expenseNumber + incomeNumber;
+            balance.innerText = balanceNumber;
         }
     }
 
-
 }
+
+
+// function updateAfterDelete() {
+//     history = document.getElementById('list').querySelectorAll('li');
+//    // console.log(history);
+//     if(history.length>0){
+
+//     }
