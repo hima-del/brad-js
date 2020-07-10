@@ -243,6 +243,26 @@ var newArr = [...myName ,"FrontEnd" , 24];
 console.log(newArr) ; // ["Marina" , "Magdy" , "Shafiq" , "FrontEnd" , 24 ] ;
 ```
 
+**Local Sorage**
+
+* Local storage: Data that persists even if you refresh the page or close the browser.
+* Session storage: Data that will get cleared when the browser is closed.
+```
+Method	Description
+setItem()	- Add key/value in LocalStorage
+getItem()	- Get a value from LocalStorage
+removeItem() -	Remove item by its key
+clear() -	Remove all items from LocalStorage
+key()	- Get a key of an item from LocalStorage
+
+```
+* setItem() : Use the setItem() function to store an item in LocalStorage. This function takes a key as its first argument and a value as the second argument. As mentioned         earlier, both must be strings.
+* getItem() : Use the getItem() function to retrieve data from LocalStorage. This function takes the key that was used while saving the data as an argument.
+* removeItem() : Use the removeItem() function to remove one item from LocalStorage. You need to provide the key of the item you want to delete as an argument.
+* clear() : To remove all the data stored in LocalStorage, use the clear() function
+* key() : The key() function allows us to retrieve the key of an item saved in LocalStorage by its index. The browser creates an integer index for each item added to               LocalStorage.
+* We can get around this by using JSON.stringify() to convert a data array to a string. 
+* We'll use JSON.parse() to convert the contents of localStorage back into something we can work with later in the data variable.
 
 
   
