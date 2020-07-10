@@ -2,6 +2,8 @@ let incomeNumber = 0;
 let expenseNumber = 0;
 const btn = document.querySelector('.btn');
 btn.addEventListener('click', addTransaction);
+const listUl = document.getElementById('list');
+listUl.addEventListener('click', deleteData);
 
 function addTransaction(e) {
     const form = document.getElementById('form');
@@ -40,7 +42,6 @@ function addHistory() {
     let amountNumber = parseFloat(amount.value);
     const list = document.querySelector('.list');
     const text = document.getElementById('text');
-    console.log(list);
     if (amountNumber > 0) {
         //create li
         const li1 = document.createElement('li');
@@ -83,12 +84,13 @@ function addHistory() {
 
 }
 
-// function deleteData(e) {
+function deleteData(e) {
+    if (e.target.parentElement.classList === 'delete-btn'); {
+        //console.log(e.target.parentElement.parentElement);
+        if (confirm('are you sure')) {
+            e.target.parentElement.parentElement.remove();
+        }
+    }
 
-//     if (e.target.parentElement.classList.contains('delete-btn')) {
-//         if (confirm('are you sure')) {
-//             e.target.parentElement.parentElement.remove();
 
-//         }
-//     }
-// }
+}
