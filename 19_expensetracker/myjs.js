@@ -6,7 +6,6 @@ btn.addEventListener('click', addTransaction);
 const listUl = document.getElementById('list');
 listUl.addEventListener('click', deleteData);
 let history = document.getElementById('list').querySelectorAll('li');
-updateDom();
 
 function addTransaction(e) {
     const form = document.getElementById('form');
@@ -20,30 +19,12 @@ function addTransaction(e) {
     e.preventDefault();
 }
 
-function storeTaskInLocalStorage(text, amount, class_Name) {
-    // console.log(text, amount, class_Name);
-    let historyArray = localStorage.getItem('history') !== null ? JSON.parse(localStorage.getItem('history')) : [];
-    let obj = { text: text, amount: amount, className: class_Name };
-    historyArray.push(obj);
-    // console.log(obj);
-    localStorage.setItem('history', JSON.stringify(historyArray));
-    //    const data=JSON.parse(localStorage.getItem);
-    //    console.log();
-    updateDom();
-}
-
-function updateDom() {
-    listUl.innerHTML = '';
-    let historyArray = localStorage.getItem('history') !== null ? JSON.parse(localStorage.getItem('history')) : [];
-    //console.log(historyArray);
-    historyArray.forEach(item => {
-        //console.log(item);
-        const li = document.createElement('li');
-        li.className = item.className;
-        li.innerHTML = `${item.text}<span>${item.amount}</span><button class="delete-btn">X</button>`;
-        listUl.appendChild(li);
-    })
-}
+// function storeTaskInLocalStorage() {
+//    let historyArray=[];
+//    localStorage.setItem('history',JSON.stringify(historyArray));
+//    const data=JSON.parse(localStorage.getItem);
+//    console.log();
+// }
 
 function updateIncomeAndExpense() {
     const income = document.getElementById('money-plus');
@@ -73,13 +54,12 @@ function addHistory() {
     const list = document.querySelector('.list');
     const text = document.getElementById('text');
     if (amountNumber > 0) {
-        let className1 = 'plus';
         //create li
         const li1 = document.createElement('li');
         //add class
-        li1.className = className1;
+        li1.className = 'plus';
         const span1 = document.createElement('span');
-        span1.className = className1;
+        span1.className = 'plus';
         //cretae text node and append to li
         li1.appendChild(document.createTextNode(text.value));
         span1.appendChild(document.createTextNode(amount.value));
@@ -92,15 +72,14 @@ function addHistory() {
         link1.innerHTML = '<i class="fa fa-remove"></i>';
         //append link to li
         li1.appendChild(link1);
-        storeTaskInLocalStorage(text.value, amount.value, className1);
+        storeTaskInLocalStorage();
     } else {
-        let className2 = 'minus';
         //create li
         const li2 = document.createElement('li');
         //add class
-        li2.className = className2;
+        li2.className = 'minus';
         const span2 = document.createElement('span');
-        span2.className = className2;
+        span2.className = 'minus';
         //cretae text node and append to li
         li2.appendChild(document.createTextNode(text.value));
         span2.appendChild(document.createTextNode(amount.value));
@@ -113,7 +92,7 @@ function addHistory() {
         link2.innerHTML = '<i class="fa fa-remove"></i>';
         //append link to li
         li2.appendChild(link2);
-        storeTaskInLocalStorage(text.value, amount.value, className2);
+        storeTaskInLocalStorage();
     }
 
 }
