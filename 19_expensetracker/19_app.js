@@ -7,62 +7,66 @@ const listUl = document.getElementById('list');
 listUl.addEventListener('click', deleteData);
 let history = document.getElementById('list').querySelectorAll('li');
 updateDom();
+updateBalance();
 
 function addTransaction(e) {
-    const form = document.getElementById('form');
-    //const history = document.getElementById('list');
     updateIncomeAndExpense();
     updateBalance();
     addHistory();
-    //storeTaskInLocalStorage();
     document.getElementById('amount').value = '';
     document.getElementById('text').value = '';
     e.preventDefault();
 }
 
 function storeTaskInLocalStorage(text, amount, class_Name) {
-    // console.log(text, amount, class_Name);
     let historyArray = localStorage.getItem('history') !== null ? JSON.parse(localStorage.getItem('history')) : [];
     let obj = { text: text, amount: amount, className: class_Name };
     historyArray.push(obj);
-    // console.log(obj);
     localStorage.setItem('history', JSON.stringify(historyArray));
-    //    const data=JSON.parse(localStorage.getItem);
-    //    console.log();
     updateDom();
 }
 
 function updateDom() {
     listUl.innerHTML = '';
     let historyArray = localStorage.getItem('history') !== null ? JSON.parse(localStorage.getItem('history')) : [];
-    //console.log(historyArray);
     historyArray.forEach(item => {
-        //console.log(item);
         const li = document.createElement('li');
         li.className = item.className;
         li.innerHTML = `${item.text}<span>${item.amount}</span><button class="delete-btn">X</button>`;
         listUl.appendChild(li);
-    })
+    });
+    document.getElementById('money-plus').innerText = localStorage.getItem('income') !== null ? localStorage.getItem('income') : 0;
+    document.getElementById('money-minus').innerText = localStorage.getItem('expense') !== null ? localStorage.getItem('expense') : 0;
 }
 
 function updateIncomeAndExpense() {
     const income = document.getElementById('money-plus');
     const expense = document.getElementById('money-minus');
     const amount = document.getElementById('amount');
+    let lsIncome = localStorage.getItem('income') !== null ? parseFloat(localStorage.getItem('income')) : 0;
+    let lsExpense = localStorage.getItem('expense') !== null ? parseFloat(localStorage.getItem('expense')) : 0;
     let amountNumber = parseFloat(amount.value);
+    console.log(lsIncome, lsExpense);
+    console.log("amount", amountNumber);
     if (amountNumber > 0) {
-        incomeNumber = incomeNumber + amountNumber;
-        income.innerText = incomeNumber;
+        lsIncome = lsIncome + amountNumber;
+        income.innerText = lsIncome;
+        localStorage.setItem('income', JSON.stringify(lsIncome));
     } else {
-        expenseNumber = expenseNumber + amountNumber;
-        expense.innerText = expenseNumber;
+        lsExpense = lsExpense + amountNumber;
+        expense.innerText = lsExpense;
+        localStorage.setItem('expense', JSON.stringify(lsExpense));
     }
 }
 
 function updateBalance() {
+    let lsIncome = localStorage.getItem('income') !== null ? parseFloat(localStorage.getItem('income')) : 0;
+    let lsExpense = localStorage.getItem('expense') !== null ? parseFloat(localStorage.getItem('expense')) : 0;
+    let lsBalance = localStorage.getItem('balance') !== null ? parseFloat(localStorage.getItem('balance')) : 0;
     const balance = document.getElementById('balance');
-    let balanceNumber = expenseNumber + incomeNumber;
-    balance.innerText = balanceNumber
+    lsBalance = lsExpense + lsIncome;
+    balance.innerText = lsBalance;
+    localStorage.setItem('balance', JSON.stringify(lsBalance));
 }
 
 function addHistory() {
@@ -74,45 +78,9 @@ function addHistory() {
     const text = document.getElementById('text');
     if (amountNumber > 0) {
         let className1 = 'plus';
-        //create li
-        const li1 = document.createElement('li');
-        //add class
-        li1.className = className1;
-        const span1 = document.createElement('span');
-        span1.className = className1;
-        //cretae text node and append to li
-        li1.appendChild(document.createTextNode(text.value));
-        span1.appendChild(document.createTextNode(amount.value));
-        list.appendChild(li1);
-        li1.appendChild(span1);
-        const link1 = document.createElement('a');
-        //add class
-        link1.className = 'delete-btn';
-        //add icon html
-        link1.innerHTML = '<i class="fa fa-remove"></i>';
-        //append link to li
-        li1.appendChild(link1);
         storeTaskInLocalStorage(text.value, amount.value, className1);
     } else {
         let className2 = 'minus';
-        //create li
-        const li2 = document.createElement('li');
-        //add class
-        li2.className = className2;
-        const span2 = document.createElement('span');
-        span2.className = className2;
-        //cretae text node and append to li
-        li2.appendChild(document.createTextNode(text.value));
-        span2.appendChild(document.createTextNode(amount.value));
-        list.appendChild(li2);
-        li2.appendChild(span2);
-        const link2 = document.createElement('a');
-        //add class
-        link2.className = 'delete-btn';
-        //add icon html
-        link2.innerHTML = '<i class="fa fa-remove"></i>';
-        //append link to li
-        li2.appendChild(link2);
         storeTaskInLocalStorage(text.value, amount.value, className2);
     }
 
@@ -124,24 +92,25 @@ function deleteData(e) {
     const amount = document.getElementById('amount');
     let amountNumber = parseFloat(amount.value);
     const balance = document.getElementById('balance');
+    let lsIncome = localStorage.getItem('income') !== null ? parseFloat(localStorage.getItem('income')) : 0;
+    let lsExpense = localStorage.getItem('expense') !== null ? parseFloat(localStorage.getItem('expense')) : 0;
+    let lsBalance = localStorage.getItem('balance') !== null ? parseFloat(localStorage.getItem('balance')) : 0;
     if (e.target.parentElement.classList === 'delete-btn'); {
-        //console.log(e.target.parentElement.parentElement);
         if (confirm('are you sure')) {
-            e.target.parentElement.parentElement.remove();
-            let removedNumber = e.target.parentElement.previousSibling.textContent;
-            // console.log(incomeNumber);
-            console.log(removedNumber);
+            let removedNumber = e.target.previousSibling.textContent;
             if (removedNumber > 0) {
-                incomeNumber = incomeNumber - removedNumber;
-                income.innerText = incomeNumber;
+                lsIncome = lsIncome - removedNumber;
+                income.innerText = lsIncome;
+                localStorage.setItem('income', JSON.stringify(lsIncome));
             } else {
-                expenseNumber = expenseNumber - removedNumber;
-                expense.innerText = expenseNumber;
+                lsExpense = lsExpense - removedNumber;
+                expense.innerText = lsExpense;
+                localStorage.setItem('expense', JSON.stringify(lsExpense));
             }
-            console.log(incomeNumber);
-            console.log(expenseNumber);
-            let balanceNumber = expenseNumber + incomeNumber;
-            balance.innerText = balanceNumber;
+            lsBalance = lsIncome + lsExpense;
+            balance.innerText = lsBalance;
+            localStorage.setItem('balance', JSON.stringify(lsBalance));
+            e.target.parentElement.remove();
         }
     }
 }
