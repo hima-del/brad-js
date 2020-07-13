@@ -176,7 +176,7 @@ firstAsync();
 * In contrast, innerText only shows “human-readable” elements.
 * textContent returns every element in the node. In contrast, innerText is aware of styling and won’t return the text of “hidden” elements.
   
-  **map()**
+**map()**
   
   * The map() method creates a new array populated with the results of calling a provided function on every element in the calling array.
   
@@ -188,18 +188,16 @@ firstAsync();
   // expected output: Array [2, 8, 18, 32]
   ```
   
-  **forEach()**
+**forEach()**
   
-* The forEach() method executes a provided function once for each array element.
+  * The forEach() method executes a provided function once for each array element.
 
 ```
-const array1 = ['a', 'b', 'c'];
-
-array1.forEach(element => console.log(element));
-
-// expected output: "a"
-// expected output: "b"
-// expected output: "c"
+   const array1 = ['a', 'b', 'c'];
+   array1.forEach(element => console.log(element));
+   // expected output: "a"
+  // expected output: "b"
+ // expected output: "c"
 ```
 
 
