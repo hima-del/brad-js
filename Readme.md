@@ -291,6 +291,5 @@ key()	- Get a key of an item from LocalStorage
 
 
   
-  
 
 
