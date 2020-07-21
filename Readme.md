@@ -347,6 +347,22 @@ let text = 'Mozilla'
 console.log(text.substring(2,5))  // => "zil"
 console.log(text.substr(2,3))     // => "zil"
 ```
+ **setInterval()**
+ 
+ * The setInterval() method that repeatedly calls a function or executes a code snippet, with a fixed time delay between each call. 
+ * It returns an interval ID which uniquely identifies the interval, so we can remove it later by calling clearInterval().
+ 
+ ```
+ let intervalID = window.setInterval(myCallback, 500, 'Parameter 1', 'Parameter 2');
 
+function myCallback(a, b)
+{
 
+ console.log(a);
+ console.log(b);
+}
+```
+**setTimeout()**
+
+* The setTimeout() method sets a timer which executes a function or specified piece of code once the timer expires.
 
