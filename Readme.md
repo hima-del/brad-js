@@ -289,7 +289,22 @@ key()	- Get a key of an item from LocalStorage
 * We can get around this by using JSON.stringify() to convert a data array to a string. 
 * We'll use JSON.parse() to convert the contents of localStorage back into something we can work with later in the data variable.
 
+**slice()**
 
+* We can you remove the last character from a string by using the slice() method of the string, passing 2 parameters.
+* THe first is 0, the starting point. The second is the number of items to remove.
+* Passing a negative number will remove starting from the end
+
+```
+const text = 'abcdef'
+const editedText = text.slice(0, -1) //'abcde'
+```
+* Note that the slice() method does not modify the original string.
+* It creates a new string, this is why I assign it to a new variable in the above example.
+```
+https://srv.carbonads.net/ads/click/x/GTND42Q7CW7IVKQJCTSLYKQMF6BDLKJUF6AD4Z3JCWAIV5QIF67IL23KF6ADL5QICAYDK23ECWYI5537CTAIL23KC6BIL2QIC6YI6K3EHJNCLSIZ?segment=placement:flaviocopescom;
+
+```
   
 
 
