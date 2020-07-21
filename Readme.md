@@ -305,6 +305,48 @@ const editedText = text.slice(0, -1) //'abcde'
 https://srv.carbonads.net/ads/click/x/GTND42Q7CW7IVKQJCTSLYKQMF6BDLKJUF6AD4Z3JCWAIV5QIF67IL23KF6ADL5QICAYDK23ECWYI5537CTAIL23KC6BIL2QIC6YI6K3EHJNCLSIZ?segment=placement:flaviocopescom;
 
 ```
-  
+**sunstring()**
+
+* The substring() method returns the part of the string between the start and end indexes, or to the end of the string.
+
+```
+const str = 'Mozilla';
+
+console.log(str.substring(1, 3));
+// expected output: "oz"
+
+console.log(str.substring(2));
+// expected output: "zilla"
+```
+```
+let anyString = 'Mozilla'
+
+// Displays 'M'
+console.log(anyString.substring(0, 1))
+console.log(anyString.substring(1, 0))
+
+// Displays 'Mozill'
+console.log(anyString.substring(0, 6))
+
+// Displays 'lla'
+console.log(anyString.substring(4))
+console.log(anyString.substring(4, 7))
+console.log(anyString.substring(7, 4))
+
+// Displays 'Mozilla'
+console.log(anyString.substring(0, 7))
+console.log(anyString.substring(0, 10))
+```
+**The difference between substring() and substr()**
+
+* The arguments of substring() represent the starting and ending indexes
+* The arguments of substr() represent the starting index and the number of characters to include in the returned string.
+
+```
+let text = 'Mozilla'
+console.log(text.substring(2,5))  // => "zil"
+console.log(text.substr(2,3))     // => "zil"
+```
+
 
 
