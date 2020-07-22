@@ -305,7 +305,7 @@ const editedText = text.slice(0, -1) //'abcde'
 https://srv.carbonads.net/ads/click/x/GTND42Q7CW7IVKQJCTSLYKQMF6BDLKJUF6AD4Z3JCWAIV5QIF67IL23KF6ADL5QICAYDK23ECWYI5537CTAIL23KC6BIL2QIC6YI6K3EHJNCLSIZ?segment=placement:flaviocopescom;
 
 ```
-**sunstring()**
+**substring()**
 
 * The substring() method returns the part of the string between the start and end indexes, or to the end of the string.
 
