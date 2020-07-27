@@ -41,9 +41,9 @@
             </div>
         </nav>
     </div>
-    ```
+  ```
     
-    ```
+  ```
     .project-listing-head {
     color: rgb(45, 106, 79);
     margin-top: 80px;
