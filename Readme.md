@@ -1,3 +1,98 @@
+**How to Toggle an Element Class in JavaScript ?**
+
+**METHOD 1**
+
+* Toggling the class means if there is no class name assigned to the element, then a class name can be assigned to it dynamically =>
+  or if a certain class is already present, then it can be removed dynamically by just using the toggle() =>
+  or by using contains(), add(), remove() methods of DOMTokenList object within JavaScript.
+  
+  ```
+  <!DOCTYPE html> 
+  <html lang="en"> 
+  <head> 
+    <meta charset="UTF-8"> 
+    <title>Geeks for Geeks</title> 
+    <style> 
+        .paragraphClass { 
+            font-size: 30px; 
+            color: red; 
+        } 
+          #Button { 
+            margin-top: 15px; 
+        } 
+    </style> 
+    <script> 
+        function myFunc() { 
+            var para = document.getElementById("p"); 
+            para.classList.toggle("paragraphClass"); 
+        } 
+    </script> 
+  </head> 
+  <body> 
+    <p id="p"> 
+        Click on the button to toggle 
+        between the class to see the 
+        effects  
+    </p> 
+  
+    <button id="Button" onclick="myFunc()"> 
+        Click Me 
+    </button> 
+  </body> 
+  </html> 
+  
+  
+
+**METHOD 2**
+
+* In this method, we will use the contains(), add(), remove() method for toggling the class names. 
+* The trick here is that we will check whether a particular class is present or not using contains() method, and then we will add or remove the class names from the element       using add() or remove() respectively.
+
+```
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Geeks for Geeks</title> 
+    <style> 
+        .paragraphClass { 
+            font-size: 30px; 
+            color: red; 
+        } 
+  
+        #Button { 
+            margin-top: 15px; 
+        } 
+    </style> 
+  
+    <script> 
+        function myFunc() { 
+            var para = document.getElementById("p"); 
+  
+            if(para.classList.contains("paragraphClass")) { 
+                para.classList.remove("paragraphClass"); 
+            } 
+            else { 
+                para.classList.add("paragraphClass"); 
+            } 
+        } 
+    </script> 
+</head> 
+  
+<body> 
+    <p id="p"> 
+        Click on the button to toggle 
+        between the class to see the 
+        effects 
+    </p> 
+  
+    <button id="Button" onclick="myFunc()"> 
+        Click Me 
+    </button> 
+</body> 
+  
+</html> 
+```
 **Try and Catch**
 
 * The try statement : test a block of code for errors.
