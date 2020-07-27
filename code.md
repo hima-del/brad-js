@@ -174,3 +174,5 @@ window.onclick = function(event) {
     }
 }
 ```
+
+* https://codepen.io/lalwanivikas/details/eZxjqo =>Link to js calculator project demo in codepen
