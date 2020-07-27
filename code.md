@@ -42,3 +42,103 @@
         </nav>
     </div>
     ```
+    
+    ```
+    .project-listing-head {
+    color: rgb(45, 106, 79);
+    margin-top: 80px;
+}
+
+#home {
+    color: rgb(45, 106, 79);
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.dropbtn {
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+:focus {
+    outline: none;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.dropdown img {
+    float: right;
+    margin-left: 10px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    /* color: black; */
+    padding: 12px 16px;
+    text-decoration: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    color: rgb(45, 106, 79);
+    background-color: white;
+}
+
+#down-selector {
+    margin-top: 8px;
+}
+
+.show {
+    display: flex;
+    flex-direction: column;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 30px;
+}
+
+.styled-nav a {
+    color: rgb(45, 106, 79);
+    font-weight: 700;
+}
+
+.styled-nav {
+    border: 1px solid gray;
+    padding: 5px;
+    border-radius: 15px;
+    white-space: nowrap;
+    display: flex;
+}
+
+#filter-image {
+    height: 25px;
+    margin-top: 15px;
+}
+
+h1 {
+    text-align: center;
+    font-weight: bolder;
+}
+```
