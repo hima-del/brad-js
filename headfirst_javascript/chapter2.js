@@ -1,7 +1,12 @@
 //battleship game
-let location1 = 3;
-let location2 = 4;
-let location3 = 5;
+//In this chapter, we used prompt to get input from the user, and alert to display the results of the battleship game in the browser.
+// let location1 = 3;
+// let location2 = 4;
+// let location3 = 5;
+let randomLoc = Math.floor(Math.random() * 5);
+let location1 = randomLoc;
+let location2 = location1 + 1;
+let location3 = location2 + 1;
 let guess;
 let guesses = 0;
 let hits = 0;
