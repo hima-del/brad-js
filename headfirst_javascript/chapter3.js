@@ -16,7 +16,7 @@ bark("fido", "20"); //"fidosays woof woof"
 bark("lady", 10); //"ladysays woof woof"
 bark("bruno", 21); //"brunosays WOOF WOOF"
 
-//code magnet-Chapter 2
+//code magnet-Chapter 3
 function whatShallWear(temp) {
     if (temp < 60) {
         console.log('Wear a jacket');
@@ -32,3 +32,9 @@ whatShallWear(60);
 // "Wear a jacket"
 // "Wear t-shirt"
 // "Wear a sweater"
+function doIt(param) {
+    param = 2;
+}
+var test = 1;
+doIt(test);
+console.log(test);
