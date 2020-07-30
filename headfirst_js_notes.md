@@ -25,3 +25,27 @@
  * If we generate a number from 0 to 4.999… then everything will be rounded down to 0 to 4.
  * This is not the only way to do it, and in other languages it’s often done differently, but this is how you’ll see it done in most JavaScript code
  * So if I wanted a random number between 0 and 100 (including 100), I’d write Math.floor(Math.random() * 101)
+ 
+ **NULL Vs UNDEFINED**
+ 
+ * Null and Undefined are both data types in JavaScript.
+ * Undefined is a variable that has been declared but not assigned a value.
+ * Null as an assignment value => So you can assign the value null to any variable which basically means it’s blank.
+ * So by not declaring a value to a variable, JavaScript automatically assigns the value to undefined. 
+ 
+ ```
+ let name; //undefined
+ let age = null //null;
+ ```
+ ```
+ console.log(typeOf null) //object
+ console.log(typeOf undefined) //undefined
+ ```
+ * Since these are different data types, if we compare them with strict equality ===, we get false.
+ * But if we compare them with abstract equality ==, we get true.
+ * So JavaScript does consider these to be relatively equal since they both represent an empty value.
+
+ ```
+ console.log(null===undefined) //false
+ console.log(null==undefined) //true
+ 
