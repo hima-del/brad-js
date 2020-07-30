@@ -7,13 +7,6 @@
 
 **= Vs == VS === in JavaScript**
 
-* Here are the important differences between =, ==, and ===
-|=	| ==	| ===|
-|---|-----|----|
-|in JavaScript is used for assigning values to a variable|in JavaScript is used for comparing two variables, but it ignores the datatype of variable.|is used for comparing two variables, but this operator also checks datatype and compares two values.|
-
-**KEY DIFFERENCES**
-
 * = is used for assigning values to a variable.
 * == is used for comparing two variables, but it ignores the datatype of variable.
 * === is used for comparing two variables, but this operator also checks datatype and compares two values.
