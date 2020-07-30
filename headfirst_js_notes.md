@@ -24,3 +24,4 @@
  * Math.floor always rounds a number down, so 1.2 becomes 1, but so does 1.9999. 
  * If we generate a number from 0 to 4.999… then everything will be rounded down to 0 to 4.
  * This is not the only way to do it, and in other languages it’s often done differently, but this is how you’ll see it done in most JavaScript code
+ * So if I wanted a random number between 0 and 100 (including 100), I’d write Math.floor(Math.random() * 101)
