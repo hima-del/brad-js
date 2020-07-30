@@ -48,4 +48,10 @@
  ```
  console.log(null===undefined) //false
  console.log(null==undefined) //true
- 
+```
+
+**parseInt Vs parseFloat**
+
+* JavaScript provides two methods for converting non-number primitives into numbers => parseInt() and parseFloat() . 
+* parseInt() converts  a value to ana integer.
+* parseFloat() converts  a value into a floating-point number.
