@@ -94,3 +94,50 @@ varOne =100 varTwo =200
 After Call by Value Method 
 varOne =10 varTwo =20
 ```
+
+**scope of a variable**
+
+* If the variable is declared outside a function, then you can use it anywhere in your code. 
+* If a variable is declared inside a function, then you can use it only within that function => This is known as a variable’s scope.
+* There are two kinds of scope: global and local.
+* If a variable is declared outside a function, it’s GLOBAL. 
+* If it’s declared inside a function, it’s LOCAL.
+* The variables you define outside a function are globally scoped, and the function variables are locally scoped
+* If you use a variable without declaring it first, that variable will be global. 
+* That means that even if you use a variable for the first time inside a function (because you meant for it to be local), the variable will actually be global, and be available   outside the function too (which might cause confusion later). So, don’t forget to declare locals!
+
+```
+function playTurn(player, location) {
+ points = 0;
+ if (location == 1) {
+ points = points + 100;
+ }
+ return points;
+}
+var total = playTurn("Jai", 1);
+alert(points);
+```
+* We forgot to declare points with “var” before we used it. So points is automatically global.
+* That means we can use points outside the function! The value doesn’t go away (like it should) when the function is done executing
+
+**What happens when I name a local variable the same thing as an existing global variable?**
+
+* Within the body of a function, a local variable takes precedence over a global variable with the same name. 
+* If you declare a local variable or function parameter with the same name as a global variable, you effectively hide the global variable.
+* For example, the following code prints the word “local”:
+
+```
+var scope = "global";         // Declare a global variable
+function checkscope( ) {
+    var scope = "local";      // Declare a local variable with the same name
+    document.write(scope);    // Use the local variable, not the global one
+}
+checkscope( );                 // Prints "local"
+```
+
+
+
+
+
+
+
