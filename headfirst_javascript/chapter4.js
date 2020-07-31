@@ -1,5 +1,5 @@
-let scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54];
-let solution2 = scores[2];
+let scoresArray = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54];
+let solution2 = scoresArray[2];
 console.log("solution 2 produced " + solution2 + " bubbles");
 
 let flavors = ["vanilla", "butterscotch", "lavender", "chocolate", "cookie dough"];
@@ -10,10 +10,10 @@ console.log(flavors);
 let arrayNum = flavors.length;
 console.log(arrayNum);
 
-let products = ["Choo Choo Chocolate", "Icy Mint", "Cake Batter", "Bubblegum"];
-let last = products.length - 1;
+let productsArray = ["Choo Choo Chocolate", "Icy Mint", "Cake Batter", "Bubblegum"];
+let last = productsArray.length - 1;
 console.log(last);
-let recent = products[last];
+let recent = productsArray[last];
 console.log(recent);
 
 function makePhrases() {
@@ -30,3 +30,47 @@ function makePhrases() {
     console.log(phrase);
 }
 makePhrases();
+
+//using whileloop
+let scores = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69,
+    34, 55, 51, 52, 44, 51, 69, 64, 66, 55, 52, 61,
+    46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44
+];
+let output;
+let i = 0;
+while (i < scores.length) {
+    output = "bubble solution #" + i + " score: " + scores[i];
+    console.log(output);
+    i = i + 1;
+}
+
+//using for loop
+let scores2 = [60, 50, 60, 58, 54, 54, 58, 50, 52, 54, 48, 69,
+    34, 55, 51, 52, 44, 51, 69, 64, 66, 55, 52, 61,
+    46, 31, 57, 52, 44, 18, 41, 53, 55, 61, 51, 44
+];
+let output2;
+for (let l = 0; l < scores2.length; l++) {
+    output2 = "bubble solution #" + l + " score: " + scores2[l];
+    console.log(output2);
+}
+
+//code magnet using while loop
+let products = ["Choo Choo Chocolate", "Icy Mint", "Cake Batter", "Bubblegum"];
+let hasBubbleGum = [false, false, false, true];
+let j = 0;
+while (j < products.length) {
+    if (hasBubbleGum[j]) {
+        console.log(products[j] + " contains bubble gum");
+    }
+    j = j + 1;
+}
+
+//code magnets using for loop
+let products2 = ["Choo Choo Chocolate", "Icy Mint", "Cake Batter", "Bubblegum"];
+let hasBubbleGum2 = [false, false, false, true];
+for (let k = 0; k < products2.length; k++) {
+    if (hasBubbleGum2[k]) {
+        console.log(products2[k] + " contains bubble gum");
+    }
+}
