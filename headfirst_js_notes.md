@@ -117,8 +117,9 @@ function playTurn(player, location) {
 var total = playTurn("Jai", 1);
 alert(points);
 ```
-* We forgot to declare points with “var” before we used it. So points is automatically global.
+* We forgot to declare points with “var/let/const” before we used it. So points is automatically global.
 * That means we can use points outside the function! The value doesn’t go away (like it should) when the function is done executing
+* If you forget to declare a local variable using var/let/const, that variable will be global, which could have unintended consequences in your program
 
 **What happens when I name a local variable the same thing as an existing global variable?**
 
@@ -134,7 +135,7 @@ function checkscope( ) {
 }
 checkscope( );                 // Prints "local"
 ```
-
+https://www.oreilly.com/library/view/javascript-the-definitive/0596101996/ch04.html
 
 
 
