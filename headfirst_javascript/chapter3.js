@@ -38,3 +38,27 @@ function doIt(param) {
 var test = 1;
 doIt(test);
 console.log(test);
+//when we don't pass enough arguments and too many arguments
+function makeTea(cups, tea) {
+    console.log("Brewing " + cups + "cups of " + tea);
+}
+makeTea(3);
+makeTea(3, "earl grey", "hey ma!", 42);
+//when no arguments are passed
+function barkAtTheMoon() {
+    console.log("Wooooooooo!");
+}
+barkAtTheMoon();
+//function with return
+function bake(degrees) {
+    let message;
+    if (degrees > 500) {
+        message = "I am not a nuclear reactor"
+    } else if (degrees < 100) {
+        message = "I am not a refrigerator"
+    } else {
+        message = "that's a very comfortable temperature for me"
+    }
+    return message;
+}
+console.log(bake(350));
