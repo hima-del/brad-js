@@ -176,4 +176,32 @@ let chevy = {
 **WE CAN USE A OBJECT'S PROPERTY JUST LIKE WE USE A VARIABLE, EXCEPT WE NEED TO USE DOT NOTATION TO ACCESS THE PROPERTY IN THE OBJECT**
 
 
+**How does a variable hold an object? **
+
+* Variables don’t actually hold objects.
+* Instead they hold a reference to an object.
+* The reference is like a pointer or an address to the actual object.
+* A variable doesn’t hold the object itself, but it holds something like a pointer. 
+* In JavaScript we don’t really know what is inside a reference variable => We do know that whatever it is, it points to our object.
+* When we use dot notation, the JavaScript interpreter takes care of using the reference to get the object and then accesses its properties for us.
+* For example:
+```
+ car.color;
+ ```
+* This means “use the object referenced by the variable car to access the color property.”
+
+**Initializing an object (a reference) variable**
+
+* When you declare and initialize an object, you make the object using object notation, but that object won’t fit in the cup. 
+* So what goes in the cup is a reference to the object
+
+```
+let myCar = {...};
+```
+
+* A reference to the Car object goes into the variable.
+* The Car object itself does not go into the variable! 
+
+
+
 
