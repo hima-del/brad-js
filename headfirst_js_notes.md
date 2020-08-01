@@ -182,7 +182,9 @@ let chevy = {
 * Instead they hold a reference to an object.
 * The reference is like a pointer or an address to the actual object.
 * A variable doesn’t hold the object itself, but it holds something like a pointer. 
-* In JavaScript we don’t really know what is inside a reference variable => We do know that whatever it is, it points to our object.
+* In JavaScript we don’t reathis keyword refers to an object, that object which is executing the current bit of javascript code.
+In other words, every javascript function while executing has a reference to its current execution context, called this. Execution context means here is how the function is called.
+To understand this keyword, only we need to know how, when and from where the function is called, does not matter how and where function is declared or defined.lly know what is inside a reference variable => We do know that whatever it is, it points to our object.
 * When we use dot notation, the JavaScript interpreter takes care of using the reference to get the object and then accesses its properties for us.
 * For example:
 ```
@@ -206,6 +208,15 @@ let myCar = {...};
 
 *  when you call a function and pass it an object, you’re passing the object reference, not the object itself.
 * So using our pass by value semantics, a copy of the reference is passed into the parameter, and that reference remains a pointer to the original object
+
+**this keyword**
+
+* this keyword refers to an object, that object which is executing the current bit of javascript code.
+* Every javascript function while executing has a reference to its current execution context, called this. 
+* Execution context means here is how the function is called.
+* To understand this keyword, only we need to know how, when and from where the function is called, does not matter how and where function is declared or defined.
+
+
 
 
 
