@@ -162,8 +162,18 @@ let chevy = {
  };
  ```
 
+* Make sure you enclose your object in curly braces
+* Separate property name and property value with a colon
+* A property name can be a string, but we usually stick with valid variable names:Notice that if we are using a string with a aspace in it for  a property name, we need to use quotes around the name.
 
+```
+ let widget = {
+ cost: 3.14,
+ "on sale": true
+};
+```
 
+**WE CAN USE A OBJECT'S PROPERTY JUST LIKE WE USE A VARIABLE, EXCEPT WE NEED TO USE DOT NOTATION TO ACCESS THE PROPERTY IN THE OBJECT**
 
 
 
