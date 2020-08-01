@@ -137,6 +137,31 @@ checkscope( );                 // Prints "local"
 ```
 https://www.oreilly.com/library/view/javascript-the-definitive/0596101996/ch04.html
 
+**Javascript Objects**
+
+* They are just a acollection of properties
+
+**How to create an object**
+
+* Add a variable declaration for the object.
+* Next, start an object with a left curly brace.
+* Then all the object’s properties go inside
+* Each property has a name, a colon and then a value.
+* Each property is separated by a comma. 
+* We end the object with a closing curly brace, and just like any other variable declaration, we end this one with a semicolon.
+
+```
+let chevy = {
+ make: "Chevy",
+ model: "Bel Air",
+ year: 1957,
+ color: "red",
+ passengers: 2,
+ convertible: false,
+ mileage: 1021
+ };
+ ```
+
 
 
 
