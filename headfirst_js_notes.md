@@ -202,6 +202,11 @@ let myCar = {...};
 * A reference to the Car object goes into the variable.
 * The Car object itself does not go into the variable! 
 
+**passing objects to functions**
+
+*  when you call a function and pass it an object, you’re passing the object reference, not the object itself.
+* So using our pass by value semantics, a copy of the reference is passed into the parameter, and that reference remains a pointer to the original object
+
 
 
 
