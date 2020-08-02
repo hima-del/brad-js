@@ -18,7 +18,7 @@ let cadi = {
     convertible: false,
     mileage: 12892,
     passengers: 5
-}
+};
 
 //how object properties work
 let fiat = {
@@ -190,19 +190,19 @@ let carToSell = makeCar();
 displayCar(carToSell);
 
 //adding behavior to objects 
-let fiat2 = {
-    make: "Fiat",
-    model: "500",
-    year: 1957,
-    color: "Medium Blue",
-    passengers: 2,
-    convertible: false,
-    mileage: 88000,
-    drive: function() {
-        console.log("zoom zoom");
-    }
-};
-fiat2.drive();
+// let fiat2 = {
+//     make: "Fiat",
+//     model: "500",
+//     year: 1957,
+//     color: "Medium Blue",
+//     passengers: 2,
+//     convertible: false,
+//     mileage: 88000,
+//     drive: function() {
+//         console.log("zoom zoom");
+//     }
+// };
+// fiat2.drive();
 
 //improving the drive method
 let fiat3 = {
@@ -257,3 +257,87 @@ var song = {
 };
 song.play();
 song.pause();
+
+
+let chevy2 = {
+    make: "Chevy",
+    model: "Bel Air",
+    year: 1957,
+    color: "red",
+    passengers: 2,
+    convertible: false,
+    mileage: 1021,
+    started: false,
+    start: function() {
+        this.started = true;
+    },
+    stop: function() {
+        this.started = false;
+    },
+    drive: function() {
+        if (this.started) {
+            console.log(this.make + this.model + " goes zoom zoom ")
+        } else {
+            console.log("you need to start the engine first");
+        }
+    }
+};
+chevy2.start();
+chevy2.drive();
+chevy2.stop();
+
+let cadi2 = {
+    make: "GM",
+    model: "Cadillac",
+    year: 1955,
+    color: "tan",
+    convertible: false,
+    mileage: 12892,
+    passengers: 5,
+    started: false,
+    start: function() {
+        this.started = true;
+    },
+    stop: function() {
+        this.started = false;
+    },
+    drive: function() {
+        if (this.started) {
+            console.log(this.make + this.model + " goes zoom zoom ")
+        } else {
+            console.log("you need to start the engine first");
+        }
+    }
+};
+
+cadi2.start();
+cadi2.drive();
+cadi2.stop();
+
+let taxi2 = {
+    make: "Webville Motors",
+    model: "Taxi",
+    year: 1955,
+    color: "yellow",
+    passengers: 4,
+    convertible: false,
+    mileage: 281341,
+    started: false,
+    start: function() {
+        this.started = true;
+    },
+    stop: function() {
+        this.started = false;
+    },
+    drive: function() {
+        if (this.started) {
+            console.log(this.make + this.model + " goes zoom zoom ")
+        } else {
+            console.log("you need to start the engine first");
+        }
+    }
+};
+
+taxi2.start();
+taxi2.drive();
+taxi2.stop();
