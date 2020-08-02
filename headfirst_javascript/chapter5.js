@@ -51,21 +51,21 @@ let fiat = {
 // }
 
 //code magnet
-// let dog = {
-//     name: "Fido",
-//     weight: 20.2,
-//     age: 4,
-//     breed: "mixed",
-//     activity: "fetch balls"
-// };
-// let bark;
-// if (dog.weight > 20) {
-//     bark = "WOOF WOOF";
-// } else {
-//     bark = "woof woof";
-// }
-// let speak = dog.name + " says " + bark + " when he wants to " + dog.activity;
-// console.log(speak);
+let dog = {
+    name: "Fido",
+    weight: 20.2,
+    age: 4,
+    breed: "mixed",
+    activity: "fetch balls"
+};
+let bark;
+if (dog.weight > 20) {
+    bark = "WOOF WOOF";
+} else {
+    bark = "woof woof";
+}
+let speak = dog.name + " says " + bark + " when he wants to " + dog.activity;
+console.log(speak);
 
 let taxi = {
     make: "Webville Motors",
@@ -190,19 +190,19 @@ let carToSell = makeCar();
 displayCar(carToSell);
 
 //adding behavior to objects 
-// let fiat2 = {
-//     make: "Fiat",
-//     model: "500",
-//     year: 1957,
-//     color: "Medium Blue",
-//     passengers: 2,
-//     convertible: false,
-//     mileage: 88000,
-//     drive: function() {
-//         console.log("zoom zoom");
-//     }
-// };
-// fiat2.drive();
+let fiat2 = {
+    make: "Fiat",
+    model: "500",
+    year: 1957,
+    color: "Medium Blue",
+    passengers: 2,
+    convertible: false,
+    mileage: 88000,
+    drive: function() {
+        console.log("zoom zoom");
+    }
+};
+fiat2.drive();
 
 //improving the drive method
 let fiat3 = {
@@ -341,3 +341,60 @@ let taxi2 = {
 taxi2.start();
 taxi2.drive();
 taxi2.stop();
+
+//iterating through an object's properties
+
+for (let props in taxi2) {
+    console.log(`${props} : ${taxi2[props]}`);
+}
+
+//how behavior affects state
+
+let fiat4 = {
+    make: "Fiat",
+    model: "500",
+    year: 1957,
+    color: "Medium Blue",
+    passengers: 2,
+    convertible: false,
+    mileage: 88000,
+    started: false,
+    fuel: 0,
+    start: function() {
+        if (this.fuel > 0) {
+            this.started = true;
+        } else {
+            this.started = false;
+            console.log("out of fuel!");
+        }
+    },
+    stop: function() {
+        this.started = false;
+    },
+    drive: function() {
+        if (this.started) {
+            if (this.fuel > 0) {
+                console.log(this.make + " " + this.model + " goes zoommm zoommm");
+                this.fuel = this.fuel - 1;
+            } else {
+                console.log("out of fuel");
+                this.stop();
+            }
+
+        } else {
+            console.log("you need to start the engine first");
+        }
+    },
+    addFuel: function(amount) {
+        this.fuel = this.fuel + amount;
+    }
+};
+
+fiat4.start();
+fiat4.drive();
+fiat4.addFuel(2);
+fiat4.start();
+fiat4.drive();
+fiat4.drive();
+fiat4.drive();
+fiat4.stop();
