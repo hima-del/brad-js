@@ -234,6 +234,87 @@ let myCar = {...};
 * There is a good reason the value of this is set when you call the method and not when you define the object.
 
 
+**for...of Vs for...in loops**
+
+* for..of and for…in loops give us a very clean and concise syntax to iterate over all kinds of iterables and enumerables like strings, arrays and object literals.
+* Use for…of to iterate over the values in an iterable, like an array
+
+```
+let animals = ['🐔', '🐷', '🐑', '🐇'];
+let names = ['Gertrude', 'Henry', 'Melvin', 'Billy Bob'];
+
+for (let animal of animals) {
+  // Random name for our animal
+  let nameIdx = Math.floor(Math.random() * names.length);
+
+  console.log(`${names[nameIdx]} the ${animal}`);
+}
+
+// Henry the 🐔
+// Melvin the 🐷
+// Henry the 🐑
+// Billy Bob the 🐇
+```
+* Strings are also an iterable type, so you can use for…of on strings:
+
+```
+let str = 'abcde';
+
+for (let char of str) {
+  console.log(char.toUpperCase().repeat(3));
+}
+
+// AAA
+// BBB
+// ...
+```
+
+**for...in loop**
+
+* Use for…in to iterate over the properties of an object (the object keys)
+
+```
+let oldCar = {
+  make: 'Toyota',
+  model: 'Tercel',
+  year: '1996'
+};
+
+for (let key in oldCar) {
+  console.log(`${key} --> ${oldCar[key]}`);
+}
+
+// make --> Toyota
+// model --> Tercel
+```
+* We can also use for…in to iterate over the index values of an iterable like an array or a string:
+
+```
+let str = 'Turn the page';
+
+for (let index in str) {
+  console.log(`Index of ${str[index]}: ${index}`);
+}
+
+// Index of T: 0
+// Index of u: 1
+```
+
+```
+const object = { a: 1, b: 2, c: 3 };
+
+for (const property in object) {
+  console.log(`${property}: ${object[property]}`);
+}
+
+// expected output:
+// "a: 1"
+// "b: 2"
+// "c: 3"
+```
+
+
+
 
 
 
