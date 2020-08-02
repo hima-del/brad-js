@@ -217,6 +217,24 @@ let myCar = {...};
 * To understand this keyword, only we need to know how, when and from where the function is called, does not matter how and where function is declared or defined.
 
 
+**What’s the difference between a method and a function**
+
+* A method is just a function that’s been assigned to a property name in an object.
+* You call functions using the function name, while you call methods using the object dot notation and the name of the property. 
+* You can also use the keyword this in a method to refer to the object whose method was called
+*  A method is a function
+* We just call it a method because it lives inside an object. 
+* So, a method can do anything a function can do precisely because a method is a function.
+
+**When is the value of this set to the object? When we define the object, or when we call the method?**
+
+* The value of this is set to the object when you call the method. 
+* So when you call fiat.start(), this is set to fiat, and when you call chevy.start(), this is set to chevy. 
+* It looks like this is set when you define the object, because in fiat.start, this is always set to fiat, and in chevy.start, this is always set to chevy. 
+* There is a good reason the value of this is set when you call the method and not when you define the object.
+
+
+
 
 
 
