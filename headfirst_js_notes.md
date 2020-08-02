@@ -176,7 +176,7 @@ let chevy = {
 **WE CAN USE A OBJECT'S PROPERTY JUST LIKE WE USE A VARIABLE, EXCEPT WE NEED TO USE DOT NOTATION TO ACCESS THE PROPERTY IN THE OBJECT**
 
 
-**How does a variable hold an object? **
+**How does a variable hold an object?**
 
 * Variables don’t actually hold objects.
 * Instead they hold a reference to an object.
