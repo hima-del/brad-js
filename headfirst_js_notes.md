@@ -313,6 +313,12 @@ for (const property in object) {
 // "c: 3"
 ```
 
+**How behavior affects state...**
+
+* Objects contain state and behavior.
+* An object’s properties allow us to keep state about the object.
+* An object’s methods allow us to have behavior.
+
 
 
 
