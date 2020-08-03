@@ -346,6 +346,17 @@ window.onload = init;
  function. 
 
 
+**How to set an attribute with setAttribute**
+
+```
+planet.setAttribute("class", "redtext");
+```
+
+* We take our element object =>planet
+* And we use its setAttribute method to either add a new attribute or change an existing attribute.
+* The method takes two arguments, the name of the attribute you want to set or change and  the value you'd like to set that attribute to.
+* Note if the attribute doesn’t exist a new one will be created in the element.
+
 
 
 
