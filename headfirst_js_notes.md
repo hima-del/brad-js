@@ -321,6 +321,31 @@ for (const property in object) {
 
 
 
+**onload property of window object**
+
+*  first create a function that has the code you’d like executed once the page is fully loaded. 
+* After you’ve done that, you take the window object, and assign the function to its onload property
+* The window object will call any function you’ve assigned to its onload property, but only after the page is fully loaded.
+
+```
+<script>
+function init() {
+ var planet = document.getElementById("greenplanet");
+ planet.innerHTML = "Red Alert: hit by phaser fire!";
+}
+window.onload = init;
+</script>
+```
+
+* Here, we’re assigning the function init to the window.onload property. 
+* Make sure we don't use parentheses after the function name!
+* We're not calling the function; we're just assigning the function value to the window.onload property. 
+* Here the event is the “page is loaded” event.
+* A common way to deal with that situation is through a callback, also known as an event handler.
+* A callback works like this: give a function to the object that knows about the event => When the event occurs, that object will call you back, or notify you, by calling that
+ function. 
+
+
 
 
 
