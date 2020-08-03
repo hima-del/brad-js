@@ -375,6 +375,68 @@ if (isNaN(myNum)) {
 
 * Use the isNaN function, which returns true if the value passed to it is not a number.
 
+**understanding the equality operator**
+
+**CASE#1: Comparing a number and a string**
+* If you’re comparing a string and a number the same thing happens every time => the string is converted into a number, and the two numbers are then compared.
+* This doesn’t always go well, because not all strings can be converted to numbers. 
+* 99 == "vanilla" => 99 == NaN => false
+* Here we’re comparing a number and a string. 
+* But this time, when we try to convert the string to a number, we fail.
+* When we try to convert “vanilla” to a number, we get NaN, and NaN isn’t equal to anything. And so the result is false.
+
+**CASE#2: Comparing a boolean with any other type**
+* In this case, we convert the boolean to a number, and compare. 
+* true converts to 1 and false converts to 0. 
+* sometimes this case requires doing more than one type conversion
+* 1==true => 1==1 => true
+* "1"==true => "1"==1 => 1 == 1 => true
+
+**CASE#3: Comparing null and undefined**
+* Comparing these values evalutates to true. 
+* These values both essentially represent “no value” (that is, a variable with no value, or an object with no value), so they are considered to be equal.
+* undefined == null => true
+* Undefined and null are always equal.
+
+**CASE#4**
+* 1 == "" => 1 == 0 => false
+* Here we’re comparing a number and a string.
+* The empty string is converted to the number 0.
+* 1 and 0 are not the same => So this evaluates to false.
+
+**What happens if I compare a number, like 99, to a string, like “ninety-nine”, that can’t be converted to a number?**
+* JavaScript will try to convert “ninety-nine” to a number, and it will fail, resulting in NaN. 
+* So the two values won’t be equal, and the result will be false.
+
+**what if I try something like “true” == true?**
+* That is comparing a string and a boolean, so according to the rules, JavaScript will first convert true to 1, and then compare “true” and 1.
+* It will then try to convert “true” to a number, and fail, so you’ll get false
+
+**Two values are strictly equal only if they havethe same type and the same value**
+* === will find two values equal only if they are the same type and the same value.
+
+
+**look at concatenation and addition**
+
+* We figured out that when you use the + operator with numbers you get addition, and when you use it with strings you get concatenation.
+* If you try to add a number and a string, JavaScript converts the number to a string and concatenates the two (opposite of what it does with equality)
+```
+let addi = 3 + "4";
+```
+* When we have a string added to a number, we get concatenation, not addition.
+* The result variable is set to “34" (not 7).
+
+ **So if I want JavaScript to convert a string into a number to add it to another number, how would I do that?**
+* There’s a function that does this named Number 
+```
+ let num = 3 + Number("4");
+ ```
+* This statement results in num being assigned the value 7. 
+* The Number function takes an argument, and if possible, creates a number from it. 
+* If the argument can’t be converted to a number, Number returns.... wait for it..... NaN.
+
+
+
 
 
 
