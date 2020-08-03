@@ -41,6 +41,7 @@
  console.log(typeOf null) //object
  console.log(typeOf undefined) //undefined
  ```
+ * Remember, null is intended to represent an object that isn’t there.
  * Since these are different data types, if we compare them with strict equality ===, we get false.
  * But if we compare them with abstract equality ==, we get true.
  * So JavaScript does consider these to be relatively equal since they both represent an empty value.
