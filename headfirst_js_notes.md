@@ -358,6 +358,23 @@ planet.setAttribute("class", "redtext");
 * The method takes two arguments, the name of the attribute you want to set or change and  the value you'd like to set that attribute to.
 * Note if the attribute doesn’t exist a new one will be created in the element.
 
+**NaN**
+
+* JavaScript uses the value NaN, more commonly known as “Not a Number”, to represent numeric results that, well, can’t be represented.
+* Take 0/0 for instance => 0/0 evaluates to something that just can’t be represented in a computer, so it is represented by NaN in JavaScript.
+* NaN MAY BE THE WEIRDEST VALUE IN THE WORLD. 
+* Not only does it represent all the numeric values that can’t be represented, it is the only value in JavaScript that isn’t equal to itself!
+* If you compare NaN to NaN, they aren’t equal!
+* NaN isn’t equal to anything, not even itself, so, any kind of test for equality with NaN is off the table.
+* Instead we need to use a special function: isNaN. 
+```
+if (isNaN(myNum)) {
+ myNum = 0;
+}
+```
+
+* Use the isNaN function, which returns true if the value passed to it is not a number.
+
 
 
 
