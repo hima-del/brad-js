@@ -1,1 +1,1 @@
-The for...in statement iterates over all enumerable properties of an object that are keyed by strings (ignoring ones keyed by Symbols), including inherited enumerable properties.
+1. not getting output for planets exercise when window.onload function is used
