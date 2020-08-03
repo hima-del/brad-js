@@ -5,6 +5,12 @@ console.log(code);
 
 let planets = document.getElementById("greenplanets");
 planets.innerHTML = "Red Alert: hit by phaser fire!";
+planets.setAttribute("class", "redtext");
+
+let gettingattribute1 = planets.getAttribute("class");
+console.log(gettingattribute1);
+let gettingattribute2 = planets.getAttribute("id");
+console.log(gettingattribute2);
 
 function addSongs() {
     let song1 = document.getElementById('song1');
