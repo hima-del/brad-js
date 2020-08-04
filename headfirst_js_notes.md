@@ -487,7 +487,71 @@ if (string) {         //Only the empty string is falsey, all other strings are t
  // this will happen too
 }
 ```
+**Strings**
 
+**The length property**
+
+* The length property holds the number of characters in the string. 
+* It’s quite handy for iterating through the characters of the string.
+
+**The charAt method**
+
+* The charAt method takes an integer number between zero and the length of the string (minus one), and returns a string containing the single character at that position of
+  the string. 
+* Think of the string a bit like an array, with each character at an index of the string, with the indices starting at 0 (just like an array).
+* If you give it an index that is greater than or equal to the length of the string, it returns the empty string.
+
+```
+ let input = "jenny@wickedlysmart.com";
+ for(var i = 0; i < input.length; i++) {
+ if (input.charAt(i) === "@") {
+ console.log("There's an @ sign at index " + i);
+ }
+ }
+```
+
+**The indexOf method**
+
+* This method takes a string as an argument and returns the index of the first character of the first occurrence of that argument in the string.
+
+```
+let phrase = "the cat in the hat";
+let index = phrase.indexOf("cat");
+console.log("there's a cat sitting at index " + index); ////there's a cat sitting at index 4
+```
+
+* You can also add a second argument, which is the starting index for the search
+* Because we're starting the search at index 5, we're skipping the first “the" and finding the second “the” at index 11.
+```
+index = phrase.indexOf("the", 5);
+console.log("there's a the sitting at index " + index); //there's a the sitting at index 11
+```
+
+```
+index = phrase.indexOf("dog");
+console.log("there's a dog sitting at index " + index); //there's a dog sitting at index -1
+```
+
+**The substring method**
+
+* Give the substring method two indices, and it will extract and return the string contained within them.
+
+```
+let data = "name|phone|address";
+let val = data.substring(5, 10);
+console.log("Substring is " + val);
+```
+* We'd like the string from index 5 and up to (but not including) 10 returned
+
+**The split method**
+
+* The split method takes a character that acts as a delimiter, and breaks the string into parts based on the delimiter.
+
+```
+let data = "name|phone|address";
+let vals = data.split("|");
+console.log("Split array is ", vals);                       //Split array is  [ 'name', 'phone', 'address' ]
+```
 
 
 
