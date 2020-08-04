@@ -136,3 +136,54 @@ console.log("You told " + numberOfLies + " lies!");
 if (numberOfLies >= 3) {
     console.log("Guilty as charged");
 }
+
+
+let text = "YOU SHOULD NEVER SHOUT WHEN TYPING";
+let presentableText = text.toLowerCase();
+if (presentableText.length > 0) {
+    console.log(presentableText);
+}
+
+//secret life of strings
+
+let emot = "XOxxOO";
+let hugs = 0;
+let kisses = 0;
+
+emot = emot.trim();
+emot = emot.toUpperCase();
+for (let i = 0; i < emot.length; i++) {
+    if (emot.charAt(i) === "X") {
+        hugs++;
+    } else if (emot.charAt(i) == "O") {
+        kisses++;
+    }
+}
+console.log(hugs);
+console.log(kisses);
+
+let name = "Jenny";
+let phone = "867-5309";
+let fact = "This is a prime number";
+let songName = phone + "/" + name;
+let index = phone.indexOf("-");
+if (fact.substring(10, 15) === "prime") {
+    console.log(fact);
+}
+
+let input = "jenny@wickedlysmart.com";
+for (let i = 0; i < input.length; i++) {
+    if (input.charAt(i) === "@") {
+        console.log("There's an @ sign at index " + i);
+    }
+}
+
+let phrase = "the cat in the hat";
+let index1 = phrase.indexOf("cat");
+console.log("there's a cat sitting at index " + index1);
+
+index2 = phrase.indexOf("dog");
+console.log("there's a dog sitting at index " + index2);
+
+index3 = phrase.indexOf("the", 5);
+console.log("there's a the sitting at index " + index3);
