@@ -159,8 +159,8 @@ for (let i = 0; i < emot.length; i++) {
         kisses++;
     }
 }
-console.log(hugs);
-console.log(kisses);
+console.log(hugs); //3
+console.log(kisses); //3
 
 let name = "Jenny";
 let phone = "867-5309";
@@ -168,22 +168,34 @@ let fact = "This is a prime number";
 let songName = phone + "/" + name;
 let index = phone.indexOf("-");
 if (fact.substring(10, 15) === "prime") {
-    console.log(fact);
+    console.log(fact); //This is a prime number
 }
 
 let input = "jenny@wickedlysmart.com";
 for (let i = 0; i < input.length; i++) {
     if (input.charAt(i) === "@") {
-        console.log("There's an @ sign at index " + i);
+        console.log("There's an @ sign at index " + i); //There's an @ sign at index 5
     }
 }
 
 let phrase = "the cat in the hat";
 let index1 = phrase.indexOf("cat");
-console.log("there's a cat sitting at index " + index1);
+console.log("there's a cat sitting at index " + index1); //there's a cat sitting at index 4
 
 index2 = phrase.indexOf("dog");
-console.log("there's a dog sitting at index " + index2);
+console.log("there's a dog sitting at index " + index2); //there's a dog sitting at index -1
 
 index3 = phrase.indexOf("the", 5);
-console.log("there's a the sitting at index " + index3);
+console.log("there's a the sitting at index " + index3); //there's a the sitting at index 11
+
+let data1 = "name|phone|address";
+let val = data1.substring(5, 11);
+console.log("Substring is " + val);
+
+let data2 = "name|phone|address";
+let vals1 = data2.split("|");
+console.log("Split array is ", vals1);
+
+let data3 = "name phone address";
+let vals2 = data3.split(" ");
+console.log("Split array is ", vals2);
