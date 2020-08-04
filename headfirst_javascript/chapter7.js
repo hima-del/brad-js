@@ -199,3 +199,47 @@ console.log("Split array is ", vals1);
 let data3 = "name phone address";
 let vals2 = data3.split(" ");
 console.log("Split array is ", vals2);
+
+function Duck(sound) {
+    this.sound = sound;
+    this.quack = function() { console.log(this.sound); }
+}
+let toy = new Duck("quack quack");
+toy.quack();
+console.log(typeof toy);
+console.log(toy instanceof Duck);
+
+function validate(phoneNumber) {
+    if (phoneNumber.length !== 10) {
+        return false
+    }
+    for (let i = 0; i < phoneNumber.length; i++) {
+        if (i === 4) {
+            if (phoneNumber.charAt(i) !== '-') {
+                return false
+            }
+        } else if (isNaN(phoneNumber.charAt(i))) {
+            return false;
+        }
+
+    }
+    return true;
+}
+
+let num = "123 - 4567";
+console.log(validate(num));
+
+function validate2(phoneNumber) {
+    if (phoneNumber.length !== 10) {
+        return false;
+    }
+    let first = phoneNumber.substring(0, 4);
+    let second = phoneNumber.substring(5);
+    if (phoneNumber.charAt(4) !== "-" || isNaN(first) || isNaN(second)) {
+        return false
+    }
+    return true;
+}
+console.log(validate2(num));
+console.log(typeof num);
+console.log(num.length);
