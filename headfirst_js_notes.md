@@ -435,6 +435,59 @@ let addi = 3 + "4";
 * The Number function takes an argument, and if possible, creates a number from it. 
 * If the argument can’t be converted to a number, Number returns.... wait for it..... NaN.
 
+**How to determine if two objects are equal**
+
+* When we test equality of two object variables, we compare the references to those objects
+*  variables hold references to objects, and so whenever we compare two objects, we’re comparing object references.
+* Two references are equal only if they reference the same object
+* The only way a test for equality between two variables containing object references returns true is when the two references point to the same object
+
+**truthy and falsy**
+
+* There are values in JavaScript that aren’t true or false, but that are nevertheless treated as true or false in a conditional. 
+* We call these values truthy and falsey precisely because they aren’t technically true or false, but they behave like they are (again, inside a conditional). 
+* Concentrate on knowing what is falsey, and then everything else you can consider truthy
+
+```
+var testThis;
+if (testThis) {
+ // do something
+}
+var element = document.getElementById("elementThatDoesntExist");
+if (element) {
+ // do something
+}
+if (0) {
+ // do another thing
+}
+if ("") {
+ // does code here ever get evaluated? Place your bets.
+}
+if (NaN) {
+ // Hmm, what's NaN doing in a boolean test?
+}
+```
+
+* To remember which values are truthy and which are falsey, just memorize the five falsey values— undefined, null, 0, "” and NaN—and remember that everything else is truthy.
+*  Here are some examples of truthy values:
+
+```
+if ([]) {       //This is an array. It's not undefined, null, zero, “” or NaN. It has to be true!
+ // this will happen
+}
+var element = document.getElementById("elementThatDoesExist");
+if (element) {
+ // so will this
+}
+if (1) {            //Only the number 0 is falsey, all others are truthy
+ // gonna happen
+}
+var string = "mercy me";
+if (string) {         //Only the empty string is falsey, all other strings are truthy.
+ // this will happen too
+}
+```
+
 
 
 
