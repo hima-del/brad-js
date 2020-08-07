@@ -558,6 +558,20 @@ console.log("Split array is ", vals);                       //Split array is  [ 
 * The instanceof operator in JavaScript is used to check the type of an object at run time.
 * It returns a boolean value if true then it indicates that the object is an instance of a particular class and if false then it is not.
 
+**we take the letter and convert it to a number by using a helper array that contains the letters A-F. To get the number, we can use the indexOf method to get the index of the letter in the array**
+
+```
+function parseGuess(guess) {
+ var alphabet = ["A", "B", "C", "D", "E", "F", "G"];
+ if (guess === null || guess.length !== 2) {
+ alert("Oops, please enter a letter and a number on the board.");
+ } else {
+ firstChar = guess.charAt(0);
+ var row = alphabet.indexOf(firstChar);
+ }
+}
+```
+
 
 
 
