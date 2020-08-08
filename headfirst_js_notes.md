@@ -572,6 +572,14 @@ function parseGuess(guess) {
 }
 ```
 
+**document.getElementsByTagName**
+
+* This method takes a tag name, like img or p or div, and returns a list of elements that match it
+*  It returns an object that you can treat like an array, but it’s actually an object called a NodeList. 
+* A NodeList is a collection of Nodes, which is just a technical name for the element objects that you see in the DOM tree. 
+* You can iterate over this collection by getting its length using the length property, and then access each item in the NodeList using an index with the bracket notation,
+  just like an array.
+
 
 
 
