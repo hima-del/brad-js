@@ -175,4 +175,27 @@ window.onclick = function(event) {
 }
 ```
 
-* https://codepen.io/lalwanivikas/details/eZxjqo =>Link to js calculator project demo in codepen
+* I was unable to access a single image in an image folder. Solved it using backtext
+
+```
+window.onload = init;
+
+function init() {
+    let images = document.getElementsByTagName("img");
+    //console.log(images);
+    for (let i = 0; i < images.length; i++) {
+        // console.log(images[i]);
+        images[i].onclick = showAnswer;
+    }
+}
+
+function showAnswer(eventObj) {
+    let image = eventObj.target;
+    //console.log(image);
+    let name = image.id;
+    //console.log(name);
+    name = name + ".jpg"
+        //console.log(name);
+    image.src = `img/${name}`;
+}
+```
