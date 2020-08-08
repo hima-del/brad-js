@@ -16,21 +16,33 @@
 // }
 window.onload = init;
 
+// function init() {
+//     let images = document.getElementsByTagName("img");
+//     //console.log(images);
+//     for (let i = 0; i < images.length; i++) {
+//         // console.log(images[i]);
+//         images[i].onclick = showAnswer;
+//     }
+// }
+
+// function showAnswer(eventObj) {
+//     let image = eventObj.target;
+//     //console.log(image);
+//     let name = image.id;
+//     //console.log(name);
+//     name = name + ".jpg"
+//         //console.log(name);
+//     image.src = `img/${name}`;
+// }
+
 function init() {
-    let images = document.getElementsByTagName("img");
-    //console.log(images);
-    for (let i = 0; i < images.length; i++) {
-        // console.log(images[i]);
-        images[i].onclick = showAnswer;
-    }
+    let map = document.getElementById("map");
+    map.onmousemove = showCoords;
 }
 
-function showAnswer(eventObj) {
-    let image = eventObj.target;
-    //console.log(image);
-    let name = image.id;
-    //console.log(name);
-    name = name + ".jpg"
-        //console.log(name);
-    image.src = `img/${name}`;
+function showCoords(eventObj) {
+    let map = document.getElementById("coords");
+    let x = eventObj.clientX;
+    let y = eventObj.clientY;
+    map.innerHTML = "map coordinates: " + x + ", " + y;
 }
