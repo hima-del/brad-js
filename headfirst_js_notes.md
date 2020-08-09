@@ -580,6 +580,22 @@ function parseGuess(guess) {
 * You can iterate over this collection by getting its length using the length property, and then access each item in the NodeList using an index with the bracket notation,
   just like an array.
 
+**what is an event handler**
+
+* We write handlers to handle events. 
+* Handlers are typically small pieces of code that know what to do when an event occurs.
+* In terms of code, a handler is just a function.
+* When an event occurs, its handler function is called. 
+* For example 
+
+```
+function pageLoadedHandler() {
+ alert("I'm alive!");
+}
+
+window.onload = pageLoadedHandler;
+```
+
 
 
 
