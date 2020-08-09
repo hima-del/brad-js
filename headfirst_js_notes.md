@@ -596,8 +596,53 @@ function pageLoadedHandler() {
 window.onload = pageLoadedHandler;
 ```
 
+**setTimeout**
+
+* setTimeout allows us to run a function once after the interval of time.
+
+```
+function timerHandler() {
+ alert("Hey what are you doing just sitting there staring at a blank screen?");
+}
+
+setTimeout(timerHandler, 5000);
+```
+* First we write an event handler. 
+* This is the handler that will be called when the time event has occurred.
+* Using setTimeout is a bit like setting a stop watch. 
+* Here we’re asking the timer to wait 5000 milliseconds (5 seconds).
+* And then call the handler timerHandler.
+* And here, we call setTimeout, which takes two arguments: the event handler and a time duration (in milliseconds).
+*  setTimeout function essentially creates a countdown timer and associates a handler with that timer. 
+* That handler is called when the timer hits zero.
+* Now to tell setTimeout what handler to call, we need to pass it a reference to the handler function.
+* setTimeout stores the reference away to use later when the timer has expired.
 
 
+**setInterval**
+
+* setInterval allows us to run a function repeatedly, starting after the interval of time, then repeating continuously at that interval.
+
+```
+let tick = true;
+function ticker() {
+ if (tick) {
+ console.log("Tick");
+ tick = false;
+ } else {
+ console.log("Tock");
+ tick = true;
+ }
+}
+setInterval(ticker, 1000);
+```
+
+* To stop an interval timer, save the result of calling setInterval in a variable and then pass that to clearInterval later, when you want to stop the timer.
+
+```
+let t = setInterval(ticker, 1000);
+clearInterval(t);
+```
 
 
 
