@@ -644,5 +644,32 @@ let t = setInterval(ticker, 1000);
 clearInterval(t);
 ```
 
+**function declaration Vs function expressions**
+
+```
+function quack(num) {
+ for (let i = 0; i < num; i++) {
+ console.log("Quack!");
+ }
+}
+quack(3);
+```
+
+*  formally, the first statement above is a function declaration, which creates a function that has a name—in this case quack—that can be used to reference and invoke the          function.
+
+```
+let fly = function(num) {
+ for (let i = 0; i < num; i++) {
+ console.log("Flying!");
+ }
+};
+fly(3);
+```
+
+* When we use the function keyword this way—that is, within a statement, like an assignment statement—we call this a function expression. 
+* Unlike the function declaration, this function doesn’t have a name.
+* The expression results in a value that is then assigned to the variable fly. 
+* We are assigning it to the variable fly and then later invoking it, so it must be a reference to a function.
+
 
 
