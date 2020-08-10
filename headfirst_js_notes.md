@@ -669,7 +669,14 @@ fly(3);
 * When we use the function keyword this way—that is, within a statement, like an assignment statement—we call this a function expression. 
 * Unlike the function declaration, this function doesn’t have a name.
 * The expression results in a value that is then assigned to the variable fly. 
-* We are assigning it to the variable fly and then later invoking it, so it must be a reference to a function.
+* We are assigning it to the variable fly and then later invoking it, so it must be a reference to a function
+* Function declarations are evaluated before the rest of the code is evaluated.
+* Function expressions get evaluated later, with the rest of the code.
+* A function declaration doesn’t return a reference to a function; rather it creates a variable with the name of the function and assigns the new function to it.
+* A function expression returns a reference to the new function created by the expression.
+* The process of invoking a function created by a declaration is exactly the same for one created with an expression.
+* You can hold function references in variables.
+* Function declarations are statements;function expressions are used in statements.
 
 
 
