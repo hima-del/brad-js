@@ -678,5 +678,30 @@ fly(3);
 * You can hold function references in variables.
 * Function declarations are statements;function expressions are used in statements.
 
+**How can a function be an expression?**
+
+* An expression is anything that evaluates to a value. 
+* 3+4 evaluates to 7, Math.random() * 6 evaluates to a random number, and a function expression evaluates
+  to a function reference. 
+  
+  **Difference between function declaration and function expression**
+  
+  * With a declaration, a function is created and setup before the rest of the code gets evaluated.
+  * With a function expression, a function is created as the code executes, at runtime.
+  * Another difference has to do with function naming— when you use a declaration, the function name is used to create and set up as a variable that refers to the function.
+  * When you use a function expression, you typically don’t provide a name for the function, so either you end up assigning the function to a variable in code, or you
+    use the function expression in other ways. 
+  * Remember quack is defined with a function declaration, and fly with a function expression. 
+  * Both result in function references, which are stored in the variables quack and fly.
+  * The function declaration takes care of assigning the reference to a variable with the name you supply => in this case quack.
+  * When you have a function expression, you need to assign the resulting reference to a variable yourself => Here we’re storing the reference in the fly variable.
+  
+  **“What makes JavaScript functions first class?”**
+  
+     ❏ We can assign functions to variables.
+     ❏ We can pass functions to functions.
+     ❏ We can return functions from functions.
+     
+     
 
 
