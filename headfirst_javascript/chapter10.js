@@ -42,50 +42,50 @@ a();
 
 //first class functions
 
-let passengers = [{ name: "Jane Doloop", paid: true },
-    { name: "Dr.Evel", paid: true },
-    { name: "Sue Property", paid: false },
-    { name: "John Funcall", paid: true }
-];
+// let passengers = [{ name: "Jane Doloop", paid: true },
+//     { name: "Dr.Evel", paid: true },
+//     { name: "Sue Property", paid: false },
+//     { name: "John Funcall", paid: true }
+// ];
 
-function checkNoFlyList(passenger) {
-    return (passenger.name === "Dr.Evel");
-}
+// function checkNoFlyList(passenger) {
+//     return (passenger.name === "Dr.Evel");
+// }
 
-function checkNotPaid(passenger) {
-    return (!passenger.paid)
-}
+// function checkNotPaid(passenger) {
+//     return (!passenger.paid)
+// }
 
-function printPassenger(passenger) {
-    let message = passenger.name;
-    if (passenger.paid === true) {
-        console.log(message + " has paid");
-    } else if (passenger.paid === false) {
-        console.log(message + " not paid");
-    }
-}
+// function printPassenger(passenger) {
+//     let message = passenger.name;
+//     if (passenger.paid === true) {
+//         console.log(message + " has paid");
+//     } else if (passenger.paid === false) {
+//         console.log(message + " not paid");
+//     }
+// }
 
 
-function processPassengers(passengers, testFunction) {
-    for (let i = 0; i < passengers.length; i++) {
-        if (testFunction(passengers[i])) {
-            return false;
-        }
-    }
-    return true;
-}
+// function processPassengers(passengers, testFunction) {
+//     for (let i = 0; i < passengers.length; i++) {
+//         if (testFunction(passengers[i])) {
+//             return false;
+//         }
+//     }
+//     return true;
+// }
 
-let allCanFly = processPassengers(passengers, checkNoFlyList);
-if (!allCanFly) {
-    console.log("The plane can't take off: we have a passenger on the no fly list ");
-}
+// let allCanFly = processPassengers(passengers, checkNoFlyList);
+// if (!allCanFly) {
+//     console.log("The plane can't take off: we have a passenger on the no fly list ");
+// }
 
-let allPaid = processPassengers(passengers, checkNotPaid);
-if (!allPaid) {
-    console.log("the plane can't take off: not everyone has paid");
-}
+// let allPaid = processPassengers(passengers, checkNotPaid);
+// if (!allPaid) {
+//     console.log("the plane can't take off: not everyone has paid");
+// }
 
-processPassengers(passengers, printPassenger);
+// processPassengers(passengers, printPassenger);
 //sharpen your pencil exercise
 
 // function sayIt(translator) {
@@ -99,23 +99,92 @@ processPassengers(passengers, printPassenger);
 // }
 // sayIt(hawaiianTranslator);
 
-function fun(echo) {
-    console.log(echo);
-};
+// function fun(echo) {
+//     console.log(echo);
+// };
 
-fun("hello");
+// fun("hello");
 
-function boo(aFunction) {
-    aFunction("boo");
+// function boo(aFunction) {
+//     aFunction("boo");
+// }
+// boo(fun);
+// console.log(fun);
+// fun(boo);
+// let moreFun = fun;
+// moreFun("hello again");
+
+// function echoMaker() {
+//     return fun;
+// }
+// let bigFun = echoMaker();
+// bigFun("Is there an echo?");
+
+//returning function from function
+
+let passengers = [{ name: "Jane Doloop", paid: true, ticket: "coach" },
+    { name: "Dr. Evel", paid: true, ticket: "firstclass" },
+    { name: "Sue Property", paid: false, ticket: "firstclass" },
+    { name: "John Funcall", paid: true, ticket: "coach" }
+];
+
+// function createDrinkOrder(passenger){
+//     if(passenger.ticket==="firstclass"){
+//         console.log("would you like a acocktail or wine");
+//     }else{
+//         console.log("your choice is cola or water");
+//     }
+// }
+
+// function servicceCustomer(passenger){
+//     createDrinkOrder(passenger)
+// }
+
+//sharpen your pencil exercise page 453 [doubt]
+
+// function addN(n) {
+//     let adder = function(x) {
+//         return n + x;
+//     };
+//     return adder;
+// }
+
+// let add2 = addN(2);
+// console.log(add2);
+// console.log(add2(5));
+
+
+//using first class functions
+
+function createDrinkOrder(passenger) {
+    let orderFunction;
+    if (passenger.ticket === "firstclass") {
+        orderFunction = function() {
+            console.log("would you like a cocktail or wine");
+        };
+    } else {
+        orderFunction = function() {
+            console.log("your choice is cola or water");
+        };
+    }
+    return orderFunction;
 }
-boo(fun);
-console.log(fun);
-fun(boo);
-let moreFun = fun;
-moreFun("hello again");
 
-function echoMaker() {
-    return fun;
+function serveCustomer(passenger) {
+    let getDrinkOrderFunction = createDrinkOrder(passenger);
+    getDrinkOrderFunction();
+    //get dinner order
+    getDrinkOrderFunction();
+    getDrinkOrderFunction();
+    //show movie
+    getDrinkOrderFunction();
+    //pick up trash
 }
-let bigFun = echoMaker();
-bigFun("Is there an echo?");
+
+function servePassenger(passengers) {
+    for (let i = 0; i < passengers.length; i++) {
+        serveCustomer(passengers[i]);
+    }
+}
+
+servePassenger(passengers);
