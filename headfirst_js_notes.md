@@ -754,6 +754,11 @@ console.log(numbers);
 [ 0,  1,  2, 3, 10, 20, 30 ]
 
 ```
+
+* The sort method has sorted numbersArray in ascending order because when we return the values 1, 0 and -1, we’re telling the sort method:
+*  1: place the first item after the second item
+*  0: the items are equivalent, you can leave them in place
+* -1: place the first item before the second item.
      
 
 
