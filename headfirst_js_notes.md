@@ -759,6 +759,16 @@ console.log(numbers);
 *  1: place the first item after the second item
 *  0: the items are equivalent, you can leave them in place
 * -1: place the first item before the second item.
+
+* You know that the comparison function we pass to sort needs to return a number greater than 0, equal to 0, or less than 0 depending on the two items we’re comparing: 
+* if the first item is greater than second, we return a value greater than 0; if first item is equal to the second, we return 0; and if the first item is less than the second,     we return a value less than 0. 
+
+```
+function compareNumbers(num1, num2) {
+ return num1 - num2;
+}
+```
+
      
 
 
