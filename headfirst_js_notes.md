@@ -703,5 +703,57 @@ fly(3);
      ❏ We can return functions from functions.
      
      
+ **Array sort methods**
+ 
+ * The sort() method allows you to sort elements of an array in place. Besides returning the sorted array, the sort() method changes the positions of the elements in the            original array.
+ * By default, the sort() method sorts the array elements in ascending order with the smallest value first and largest value last.
+ * The sort() method casts elements to strings and compares the strings to determine the orders.
+ 
+ ```
+ let numbers = [0, 1 , 2, 3, 10, 20, 30 ];
+numbers.sort();
+console.log(numbers);
+//output
+[ 0, 1, 10, 2, 20, 3, 30 ]
+```
+
+* In this example, the sort() method places 10 before 2 because the string “10” comes before “2” when doing a string comparison.
+* To fix this, you need to pass a comparison function to the sort() method. 
+* The sort() method will use the compare function to determine the orders of elements.
+
+```
+array.sort(comparefunction)
+```
+
+* The sort() method accepts an optional argument which is a function that compares two elements of the array.
+* If you omit the compare function, the sort() method sorts the elements with the sort order based on the Unicode code point values of elements as mentioned earlier.
+* The compare function of the sort() method accepts two arguments and returns a value that determines the sort order
+
+```
+function compare(a,b) {
+  // ...
+}
+```
+
+* The compare() function accepts two arguments a and b. The sort() method will sort elements based on the return value of the compare() function with the following rules:
+   * If compare(a,b) is less than zero, the sort() method sorts a to a lower index than b. In other words, a will come first.
+   * If compare(a,b) is greater than zero, the sort() method sort b to a lower index than a, i.e., b will come first.
+   * If compare(a,b) returns zero, the sort() method considers a equals b and leaves their positions unchanged.
+
+```
+let numbers = [0, 1 , 2, 3, 10, 20, 30 ];
+numbers.sort(function(a,b){
+    if(a > b) return 1;
+    if(a < b) return -1;
+    return 0;
+});
+
+console.log(numbers);
+
+//Output
+[ 0,  1,  2, 3, 10, 20, 30 ]
+
+```
+     
 
 
