@@ -125,7 +125,9 @@ a();
 let passengers = [{ name: "Jane Doloop", paid: true, ticket: "coach" },
     { name: "Dr. Evel", paid: true, ticket: "firstclass" },
     { name: "Sue Property", paid: false, ticket: "firstclass" },
-    { name: "John Funcall", paid: true, ticket: "coach" }
+    { name: "John Funcall", paid: true, ticket: "coach" },
+    { name: "Anna", paid: true, ticket: "premium" },
+    { name: "Jennipher", paid: true, ticket: "premium" }
 ];
 
 // function createDrinkOrder(passenger){
@@ -162,6 +164,10 @@ function createDrinkOrder(passenger) {
         orderFunction = function() {
             console.log("would you like a cocktail or wine");
         };
+    } else if (passenger.ticket === "premium") {
+        orderFunction = function() {
+            console.log("would you like wine, cola or water");
+        };
     } else {
         orderFunction = function() {
             console.log("your choice is cola or water");
@@ -170,10 +176,30 @@ function createDrinkOrder(passenger) {
     return orderFunction;
 }
 
+function createDinnerOrder(passenger) {
+    let orderFunction;
+    if (passenger.ticket === "firstclass") {
+        orderFunction = function() {
+            console.log("would you like chicken or pasta?");
+        };
+    } else if (passenger.ticket === "premium") {
+        orderFunction = function() {
+            console.log("would youl like a snack box or cheese plate ");
+        };
+    } else {
+        orderFunction = function() {
+            console.log("would you like peanuts or pretzels");
+        };
+    }
+    return orderFunction;
+}
+
 function serveCustomer(passenger) {
     let getDrinkOrderFunction = createDrinkOrder(passenger);
+    let getDinnerOrderFunction = createDinnerOrder(passenger);
     getDrinkOrderFunction();
     //get dinner order
+    getDinnerOrderFunction();
     getDrinkOrderFunction();
     getDrinkOrderFunction();
     //show movie
