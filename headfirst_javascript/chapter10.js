@@ -225,18 +225,77 @@ let products = [{ name: "Grapefruit", calories: 170, color: "red", sold: 8200 },
     { name: "Water", calories: 0, color: "clear", sold: 62123 }
 ];
 
-//sort an array
-
-let numbersArray = [60, 50, 62, 58, 54, 54];
-
-function compareNumbers(num1, num2) {
-    if (num1 > num2) {
+function compareSold(colA, colB) {
+    if (colA.sold > colB.sold) {
         return 1;
-    } else if (num1 === num2) {
+    } else if (colA.sold === colB.sold) {
         return 0;
     } else {
         return -1;
     }
 }
-numbersArray.sort(compareNumbers);
-console.log(numbersArray);
+
+function printProducts(products) {
+    for (let i = 0; i < products.length; i++) {
+        console.log("Name: " + products[i].name + ", Calories: " + products[i].calories + ", Color: " + products[i].color + " ,Sold: " + products[i].sold);
+    }
+}
+products.sort(compareSold);
+printProducts(products);
+
+function compareName(colA, colB) {
+    if (colA.name > colB.name) {
+        return 1;
+    } else if (colA.name === colB.name) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+function compareCalories(colA, colB) {
+    if (colA.calories > colB.calories) {
+        return 1;
+    } else if (colA.calories === colB.calories) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+function compareColor(colA, colB) {
+    if (colA.color > colB.color) {
+        return 1;
+    } else if (colA.color === colB.color) {
+        return 0;
+    } else {
+        return -1;
+    }
+}
+
+products.sort(compareName);
+console.log("products sorted by name: ");
+printProducts(products);
+
+products.sort(compareCalories);
+console.log("products sorted by calories: ");
+printProducts(products);
+
+products.sort(compareColor);
+console.log("products sorted by color: ");
+printProducts(products);
+//sort an array
+
+// let numbersArray = [60, 50, 62, 58, 54, 54];
+
+// function compareNumbers(num1, num2) {
+//     if (num1 > num2) {
+//         return 1;
+//     } else if (num1 === num2) {
+//         return 0;
+//     } else {
+//         return -1;
+//     }
+// }
+// numbersArray.sort(compareNumbers);
+// console.log(numbersArray);
