@@ -128,3 +128,21 @@ let doCount = makeCounter();
 console.log(doCount());
 console.log(doCount());
 console.log(doCount());
+
+//exercise
+
+// makePassword(password) {
+//     return function acceptPassword(passwordGuess) {
+//         return (passwordGuess === password);
+//     };
+// }
+
+//creating closure by passing function expression as an argument
+
+function makeTimer(doneMessage, n) {
+    setTimeout(function() {
+        console.log(doneMessage);
+    }, n);
+}
+
+makeTimer("cookies are done!", 1000);
