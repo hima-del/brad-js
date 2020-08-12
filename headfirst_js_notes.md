@@ -825,6 +825,15 @@ var result = innerFunction();
                 notSoMuch = false;
 ```
 
+**Function closure**
+
+*  A function typically has local variables in its code body and it also might have variables that aren’t defined locally, which we call free variables. 
+* The name free comes from the fact that within the function body, free variables aren’t bound to any values (in other words, they’re not declared locally in the function).
+* When we have an environment that has a value for each of the free variables, we say that we’ve closed the function. 
+* When we take the function and the environment together, we say we have a closure.
+**A closure results when we combine a function that has free variables with an environment that provides variable bindings for all those free variables.**
+
+
                 
 
      
