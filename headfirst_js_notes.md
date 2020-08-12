@@ -769,6 +769,64 @@ function compareNumbers(num1, num2) {
 }
 ```
 
+```
+function whereAreYou() {
+ var justAVar = "Just an every day LOCAL";
+ function inner() {
+ return justAVar;
+ }
+ return inner;
+}
+```
+
+* First we encounter a local variable, named justAVar. We assign the string “Just an every day LOCAL” to the variable.
+* All local variables are stored in an environment. It holds all the variables defined in the local scope. In this example, the environment just has one variable, the justAVar     variable.
+* We then create a function, with the name inner.
+* And finally, when we return the function, we don’t just return the function; we return the function with the environment attached to it.
+* Every function has an attached environment, which contains the local variables within its enclosing scope.
+
+```
+//CALLING  A FUNCTION
+
+var innerFunction = whereAreYou();
+var result = innerFunction();
+console.log(result);
+```
+
+* First, we call whereAreYou. We already know that returns a function reference. So we create a variable innerFunction and assign it that function. Remember, that function         reference is linked to an environment.
+
+```
+var innerFunction = whereAreYou();
+```
+* Next we call innerFunction. To do that we evaluate the code in the function’s body, and do that in the context of the function’s environment
+
+```
+var result = innerFunction();
+```
+**If we have a function that is returned from within a function, it carries its environment around with it.**
+
+* A free variable is one that isn't defined in the local scope and the environments closes the function. By that we mean that it provides values for all the free
+  variables. 
+  
+  ```
+  function justSayin(phrase) {
+   var ending = "";
+  if (beingFunny) {
+  ending = " -- I'm just sayin!";
+  } else if (notSoMuch) {
+  ending = " -- Not so much.";
+  }
+  alert(phrase + ending);
+ }
+```
+
+```//free variables : beingFunny, notSoMuch
+//environment : beingFunny = true;
+                notSoMuch = false;
+```
+
+                
+
      
 
 
