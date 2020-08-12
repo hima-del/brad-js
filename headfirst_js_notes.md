@@ -833,6 +833,29 @@ var result = innerFunction();
 * When we take the function and the environment together, we say we have a closure.
 **A closure results when we combine a function that has free variables with an environment that provides variable bindings for all those free variables.**
 
+**object constructors**
+
+* Using constructors is a two-step process: first we define a constructor, and then we use it to create objects
+```
+function Dog(name, breed, weight) {
+ this.name = name;
+ this.breed = breed;
+ this.weight = weight;
+}
+let fido = new Dog("Fido", "Mixed", 38);
+```
+
+**How constructors work**
+
+* The first thing new does is create a new, empty object
+* Next, new sets this to point to the new object.
+* With this set up, we now call the function Dog, passing "Fido", "Mixed" and 38 as arguments. 
+* Next the body of the function is invoked. Like most constructors, Dog assigns values to properties in the newly created this object.
+* Finally, once the Dog function has completed its execution the new operator returns this, which is a reference to the newly created object.
+* After the new object has been returned, we assign that reference to the variable fido.
+
+
+
 
                 
 
