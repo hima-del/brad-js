@@ -146,3 +146,12 @@ function makeTimer(doneMessage, n) {
 }
 
 makeTimer("cookies are done!", 1000);
+
+let eat = function(food) {
+    if (food === "cookies") {
+        console.log("More please");
+    } else if (food === "cake") {
+        console.log("Yum yum");
+    }
+};
+(eat)("cookies");
