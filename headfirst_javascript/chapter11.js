@@ -85,17 +85,46 @@ if (migrating) {
 // let result = whereAreYou();
 // console.log(result);
 
-let justAVar = "oh, don't you worry about it, I'm GLOBAL";
+// let justAVar = "oh, don't you worry about it, I'm GLOBAL";
 
-function whereAreYou() {
-    let justAVar = "just an everyday LOCAL";
+// function whereAreYou() {
+//     let justAVar = "just an everyday LOCAL";
 
-    function inner() {
-        return justAVar;
+//     function inner() {
+//         return justAVar;
+//     }
+//     return inner;
+// }
+
+// let innerFunction = whereAreYou();
+// let result = innerFunction();
+// console.log(result);
+
+// //counter
+
+// let count = 0;
+
+// function counter() {
+//     count = count + 1;
+//     return count;
+// }
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+//USING CLOSURE TO IMPLEMENT A MAGIC COUNTER
+
+function makeCounter() {
+    let count = 0;
+
+    function counter() {
+        count = count + 1;
+        return count;
     }
-    return inner;
+    return counter;
 }
 
-let innerFunction = whereAreYou();
-let result = innerFunction();
-console.log(result);
+let doCount = makeCounter();
+console.log(doCount());
+console.log(doCount());
+console.log(doCount());
