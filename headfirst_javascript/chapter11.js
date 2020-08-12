@@ -56,3 +56,46 @@ if (migrating) {
     quack(4);
     fly(4);
 }
+
+//lexical scope
+
+// let justAVar = "oh, don't you worry about it, I'm GLOBAL";
+
+// function whereAreYou() {
+//     let justAVar = "just an everyday LOCAL";
+//     return justAVar;
+// }
+
+// let result = whereAreYou();
+// console.log(result);
+
+//nested function
+
+// let justAVar = "oh, don't you worry about it, I'm GLOBAL";
+
+// function whereAreYou() {
+//     let justAVar = "just an everyday LOCAL";
+
+//     function inner() {
+//         return justAVar;
+//     }
+//     return inner();
+// }
+
+// let result = whereAreYou();
+// console.log(result);
+
+let justAVar = "oh, don't you worry about it, I'm GLOBAL";
+
+function whereAreYou() {
+    let justAVar = "just an everyday LOCAL";
+
+    function inner() {
+        return justAVar;
+    }
+    return inner;
+}
+
+let innerFunction = whereAreYou();
+let result = innerFunction();
+console.log(result);
