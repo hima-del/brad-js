@@ -836,6 +836,7 @@ var result = innerFunction();
 **object constructors**
 
 * Using constructors is a two-step process: first we define a constructor, and then we use it to create objects
+* A constructor is useful when you want to create lots of objects with the same property names and methods
 ```
 function Dog(name, breed, weight) {
  this.name = name;
@@ -849,10 +850,26 @@ let fido = new Dog("Fido", "Mixed", 38);
 
 * The first thing new does is create a new, empty object
 * Next, new sets this to point to the new object.
+* Remember that new first creates a new object before assigning it to this (and then calling your constructor function).
+* If you don’t use new, a new object will never be created.
+* That means any references to this in your constructor won’t refer to a new  object, but rather, will refer to the global object of your application
 * With this set up, we now call the function Dog, passing "Fido", "Mixed" and 38 as arguments. 
 * Next the body of the function is invoked. Like most constructors, Dog assigns values to properties in the newly created this object.
 * Finally, once the Dog function has completed its execution the new operator returns this, which is a reference to the newly created object.
 * After the new object has been returned, we assign that reference to the variable fido.
+
+
+*  You can do anything in a constructor you can do in a regular function, like declare and use variables, use for loops, call other functions, and so on. 
+* The only thing you don’t want to do is return a value (other than this) from a constructor because that will cause the constructor to not return the object
+  it’s supposed to be constructing. 
+
+
+**this keyword in constructors**
+
+*  When you call a constructor (to create an object) the value of this is set to the new object that’s being created so all the code that is evaluated in the constructor applies
+   to that new object.
+* When you call a method on an object, this is set to the object whose method you called. 
+* So the this in your methods will always refer to the object whose method was called.
 
 
 
