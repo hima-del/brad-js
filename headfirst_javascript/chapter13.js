@@ -77,3 +77,47 @@ robby.makeCoffee();
 robby.blinkLights();
 console.log(rosie.name + " was made by" + rosie.maker + " in" + rosie.year + " and is owned by " + rosie.owner);
 rosie.cleanHouse();
+
+let barnaby = new Dog("Barnaby", "Basset Hound", 55);
+
+Dog.prototype.sit = function() {
+    console.log(this.name + " is now sitting");
+}
+barnaby.sit();
+
+//laser robot exercise
+
+function Game() {
+    this.level = 0;
+}
+
+Game.prototype.play = function() {
+    this.level++;
+    console.log("welcome to level " + this.level);
+    this.unlock();
+}
+
+Game.prototype.unlock = function() {
+    if (this.level === 42) {
+        Robot2.prototype.deployLaser = function() {
+            console.log(this.name + " is blasting you with laser");
+        }
+    }
+}
+
+function Robot2(name, year, owner) {
+    this.name = name;
+    this.year = year;
+    this.owner = owner;
+}
+
+let game = new Game();
+let robby2 = new Robot2("Robby", 1956, "Dr. Morbius");
+let rosie2 = new Robot2("Rosie", 1962, "George Jetson");
+
+while (game.level < 42) {
+    game.play();
+}
+
+robby2.deployLaser();
+rosie2.deployLaser();
