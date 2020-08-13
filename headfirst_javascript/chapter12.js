@@ -200,6 +200,7 @@ function Dog2(name, breed, weight) {
         }
     };
 }
+//console.log(Dog2);
 let fluffy2 = new Dog2("Fluffy", "Poodle", 30);
 let spot2 = new Dog2("Spot", "Chihuahua", 10);
 let dogs2 = [meow, whiskers, fido2, fluffy2, spot2];
