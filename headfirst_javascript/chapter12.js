@@ -168,3 +168,45 @@ cadi2.stop();
 if (cadi2 instanceof Car2) {
     console.log("Congrats, it is a Car!");
 }
+
+//exercise
+
+function dogCatcher(obj) {
+    if (obj instanceof Dog2) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+function Cat(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+}
+let meow = new Cat("Meow", "Siamese", 10);
+let whiskers = new Cat("Whiskers", "Mixed", 12);
+let fido2 = { name: "Fido", breed: "Mixed", weight: 38 };
+
+function Dog2(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+    this.bark = function() {
+        if (this.weight > 25) {
+            console.log(this.name + " says Woof!");
+        } else {
+            console.log(this.name + " says Yip!");
+        }
+    };
+}
+let fluffy2 = new Dog2("Fluffy", "Poodle", 30);
+let spot2 = new Dog2("Spot", "Chihuahua", 10);
+let dogs2 = [meow, whiskers, fido2, fluffy2, spot2];
+for (var i = 0; i < dogs2.length; i++) {
+    if (dogCatcher(dogs2[i])) {
+        console.log(dogs2[i].name + " is a dog!");
+    } else {
+        console.log(dogs2[i].name + " is not a dog!");
+    }
+}
