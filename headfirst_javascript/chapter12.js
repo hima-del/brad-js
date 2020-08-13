@@ -210,3 +210,40 @@ for (var i = 0; i < dogs2.length; i++) {
         console.log(dogs2[i].name + " is not a dog!");
     }
 }
+
+//real world constructors
+
+let now = new Date();
+console.log(now);
+let dateString = now.toString();
+console.log(dateString);
+let theYear = now.getFullYear();
+console.log(theYear);
+let theDayOfWeek = now.getDay();
+console.log(theDayOfWeek);
+let birthday = new Date("May 1, 1983");
+console.log(birthday);
+
+//the array object
+
+let emptyArray = new Array();
+console.log(emptyArray);
+emptyArray[0] = 99;
+console.log(emptyArray);
+
+let oddNumbers = new Array(3);
+oddNumbers[0] = 1;
+oddNumbers[1] = 3;
+oddNumbers[2] = 5;
+console.log(oddNumbers);
+
+let rev = oddNumbers.reverse();
+console.log(rev);
+
+let aString = oddNumbers.join("-");
+console.log(aString);
+
+let areAllOdd = oddNumbers.every(function(x) {
+    return ((x % 2) !== 0);
+});
+console.log(areAllOdd);
