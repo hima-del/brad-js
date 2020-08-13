@@ -871,8 +871,41 @@ let fido = new Dog("Fido", "Mixed", 38);
 * When you call a method on an object, this is set to the object whose method you called. 
 * So the this in your methods will always refer to the object whose method was called.
 
+**instance of operator**
+
+* The instanceof operator returns true if the object was created by the specified constructor. 
+```
+if (cadi instanceof Car) {
+ console.log("Congrats, it's a Car!");
+};
+```
+* In this case we're saying “Is the cadi object an instance that was created by the Car constructor?”
 
 
+**every method**
+
+```
+let areAllOdd = oddNumbers.every(function(x) {
+    return ((x % 2) !== 0);
+});
+```
+* The every method takes a function and tests each value of the array to see if the function returns true or false when called on that value. 
+* If the function returns true for all the array items, then the result of the every method is true.
+
+**Why don’t we have to say "new Math" to instantiate a math object before I use it?**
+
+*  Math is not a constructor, or even a function. It’s an object.
+* Math is a built-in object that you can use to do things like get the value of pi (with Math.PI) or generate a random number (with Math.random). 
+* Think of Math as just like an object literal that has a bunch of useful properties and methods in it, built-in for you to use whenever you write JavaScript code.
+* It just happens to have a capital first letter to let you know that it’s built-in to JavaScript.
+
+**How do we write the code to ask if two objects have the same constructor?**
+
+```
+((fido instanceof Dog) &&
+ (spot instanceof Dog))
+```
+* If this expression results in true, then fido and spot were indeed created by the same constructor.
 
                 
 
