@@ -907,6 +907,38 @@ let areAllOdd = oddNumbers.every(function(x) {
 ```
 * If this expression results in true, then fido and spot were indeed created by the same constructor.
 
+  **prototypes**
+
+* JavaScript objects can inherit properties and behavior from other objects. 
+* JavaScript uses what is known as prototypal inheritance, and the object you’re inheriting behavior from is called the prototype
+* The whole point of this scheme is to inherit and reuse existing properties (including methods), while extending those properties in your brand new object.
+* When an object inherits from another, it gains access to all its methods and properties. 
+
+**How inheritance work**
+
+* When you call a method on an object instance, and that method isn’t found in the instance, you check the prototype for that method. 
+
+```
+fido.bark();
+```
+* To evaluate this code we look in the fido instance for a bark method. But there isn’t one.
+* If we can’t find bark in the fido instance, then we take a look next at its prototype.
+* Checking the Dog prototype we see it does have a bark method.
+* Finally, once we find the bark method, we invoke it, which results in Fido barking.
+* If we write code that needs fido.name, the value will come from the fido object.
+* But if we want the value of fido.species, we first check the fido object, but when it isn’t found there, we check the dog prototype
+
+**hasOwnProperty method**
+
+*  The hasOwnProperty method returns true if a property is defined in an object instance. 
+* If it’s not, but you can access that property, then you can assume the property must be defined in the object’s prototype.
+
+```
+spot.hasOwnProperty("species");
+fido.hasOwnProperty("species");
+```
+
+* Both of these return the value false because species is defined in the prototype, not the object instances spot and fido.
                 
 
      
