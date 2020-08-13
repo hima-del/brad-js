@@ -164,3 +164,7 @@ cadi2.start();
 cadi2.drive();
 cadi2.drive();
 cadi2.stop();
+
+if (cadi2 instanceof Car2) {
+    console.log("Congrats, it is a Car!");
+}
