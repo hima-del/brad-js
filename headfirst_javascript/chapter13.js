@@ -1,28 +1,28 @@
-// function Dog(name, breed, weight) {
-//     this.name = name;
-//     this.breed = breed;
-//     this.weight = weight;
-// }
+function Dog(name, breed, weight) {
+    this.name = name;
+    this.breed = breed;
+    this.weight = weight;
+}
 
-// Dog.prototype.species = "Canine";
-// Dog.prototype.bark = function() {
-//     if (this.weight > 25) {
-//         console.log(this.name + " says woof!");
-//     } else {
-//         console.log(this.name + " says yip!");
-//     }
-// };
+Dog.prototype.species = "Canine";
+Dog.prototype.bark = function() {
+    if (this.weight > 25) {
+        console.log(this.name + " says woof!");
+    } else {
+        console.log(this.name + " says yip!");
+    }
+};
 
-// Dog.prototype.run = function() {
-//     console.log("run!");
-// };
-// Dog.prototype.wag = function() {
-//     console.log("wag");
-// };
+Dog.prototype.run = function() {
+    console.log("run!");
+};
+Dog.prototype.wag = function() {
+    console.log("wag");
+};
 
-// let fido = new Dog("Fido", "Mixed", 38);
-// let fluffy = new Dog("Fluffy", "Poodle", 30);
-// let spot = new Dog("Spot", "Chihuahua", 10);
+let fido = new Dog("Fido", "Mixed", 38);
+let fluffy = new Dog("Fluffy", "Poodle", 30);
+let spot = new Dog("Spot", "Chihuahua", 10);
 
 // fido.bark();
 // fido.run();
@@ -34,10 +34,10 @@
 // spot.run();
 // spot.wag();
 
-// //let spot = new Dog("Spot", "Chihuahua", 10);
-// spot.bark = function() {
-//     console.log(this.name + " says WOOF");
-// };
+let spot = new Dog("Spot", "Chihuahua", 10);
+spot.bark = function() {
+    console.log(this.name + " says WOOF");
+};
 
 // spot.bark();
 // spot.run();
@@ -140,25 +140,25 @@
 // robby2.deployLaser();
 // rosie2.deployLaser();
 
-function Robot(name, year, owner) {
-    this.name = name;
-    this.year = year;
-    this.owner = owner;
-}
-Robot.prototype.maker = "ObjectsRUs";
-Robot.prototype.errorMessage = "All systems go.";
-Robot.prototype.reportError = function() {
-    console.log(this.name + " says " + this.errorMessage);
-};
-Robot.prototype.spillWater = function() {
-    this.errorMessage = "I appear to have a short circuit!";
-};
-let robby = new Robot("Robby", 1956, "Dr. Morbius");
-let rosie = new Robot("Rosie", 1962, "George Jetson");
-rosie.reportError();
-robby.reportError();
-robby.spillWater();
-rosie.reportError();
-robby.reportError();
-console.log(robby.hasOwnProperty("errorMessage"));
-console.log(rosie.hasOwnProperty("errorMessage"));
+// function Robot(name, year, owner) {
+//     this.name = name;
+//     this.year = year;
+//     this.owner = owner;
+// }
+// Robot.prototype.maker = "ObjectsRUs";
+// Robot.prototype.errorMessage = "All systems go.";
+// Robot.prototype.reportError = function() {
+//     console.log(this.name + " says " + this.errorMessage);
+// };
+// Robot.prototype.spillWater = function() {
+//     this.errorMessage = "I appear to have a short circuit!";
+// };
+// let robby = new Robot("Robby", 1956, "Dr. Morbius");
+// let rosie = new Robot("Rosie", 1962, "George Jetson");
+// rosie.reportError();
+// robby.reportError();
+// robby.spillWater();
+// rosie.reportError();
+// robby.reportError();
+// console.log(robby.hasOwnProperty("errorMessage"));
+// console.log(rosie.hasOwnProperty("errorMessage"));
