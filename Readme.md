@@ -506,3 +506,25 @@ switch (a) {
 * Here the switch starts to compare a from the first case variant that is 3 => The match fails => Then 4 => That’s a match, so the execution starts from case 4 until the nearest   break.
 * If there is no break then the execution continues with the next case without any checks.
 
+
+**JSON.stringify and JSON.parse**
+
+* JSON.stringify() takes a JavaScript object and then transforms it into a JSON string.
+* JSON.parse() takes a JSON string and then transforms it into a JavaScript object.
+
+```
+const myObject = {
+  dog: "🐕",
+  cat: "🐈",
+  koala: "🐨",
+  count: 3
+};
+
+console.log(JSON.stringify(myObject));
+// result: {"dog":"🐕","cat":"🐈","koala":"🐨","count":3}
+
+console.log(JSON.parse(JSON.stringify(myObject)));
+// result: Object {dog: "🐕", cat: "🐈", koala: "🐨", count: 3}
+```
+
+
