@@ -527,4 +527,37 @@ console.log(JSON.parse(JSON.stringify(myObject)));
 // result: Object {dog: "🐕", cat: "🐈", koala: "🐨", count: 3}
 ```
 
+**API REQUEST**
+
+* API stands for Application Program Interface, which can be defined as a set of methods of communication between various software components.
+* API allows software to communicate with another software.
+* A web API uses HTTP requests that correspond to the CRUD[which stands for Create, Read, Update, Delete] verbs.
+
+
+|Action    |HTTP method   |Description|
+|----------|--------------|-----------|
+|Create    |POST          |Creates a new resource|
+|Read      |GET           |Retrieves a resource  |
+|Update    |PUT/PATCH     |Updates an existing resource|
+|Delete    |DELETE        |Deletes a resource|
+```
+var request = new XMLHttpRequest()
+
+request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
+request.onload = function () {
+  // Begin accessing JSON data here
+  var data = JSON.parse(this.response)
+
+  if (request.status >= 200 && request.status < 400) {
+    data.forEach((movie) => {
+      console.log(movie.title)
+    })
+  } else {
+    console.log('error')
+  }
+}
+
+request.send()
+```
+
 
