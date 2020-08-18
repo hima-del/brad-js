@@ -560,4 +560,8 @@ request.onload = function () {
 request.send()
 ```
 
+**JavaScript Event Types**
+
+* 
+
 
