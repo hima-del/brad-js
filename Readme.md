@@ -506,12 +506,51 @@ switch (a) {
 * Here the switch starts to compare a from the first case variant that is 3 => The match fails => Then 4 => That’s a match, so the execution starts from case 4 until the nearest   break.
 * If there is no break then the execution continues with the next case without any checks.
 
+**JSON**
+
+* JSON is a text-based data format following JavaScript object syntax, which was popularized by Douglas Crockford. 
+* Even though it closely resembles JavaScript object literal syntax, it can be used independently from JavaScript
+* Many programming environments feature the ability to read (parse) and generate JSON.
+* JSON exists as a string => useful when you want to transmit data across a network. 
+* It needs to be converted to a native JavaScript object when you want to access the data. 
+* JavaScript provides a global JSON object that has methods available for converting between the two.
+* JSON is a string whose format very much resembles JavaScript object literal format. 
+* We can include the same basic data types inside JSON as you can in a standard JavaScript object => strings, numbers, arrays, booleans, and other object literals
+
+```
+{
+  "first_name"  :  "Sammy",
+  "last_name"   :  "Shark",
+  "online"      :  true
+}
+```
+* JSON is purely a data format — it contains only properties, no methods.
+* JSON requires double quotes to be used around strings and property names => Single quotes are not valid.
+* Even a single misplaced comma or colon can cause a JSON file to go wrong, and not work.
+* You can validate JSON using an application like JSONLint.
+* JSON can actually take the form of any data type that is valid for inclusion inside JSON, not just arrays or objects => a single string or number would be a valid JSON object.
+* Unlike in JavaScript code in which object properties may be unquoted, in JSON only quoted strings may be used as properties.
+
 
 **JSON.stringify and JSON.parse**
 
 * JSON.stringify() takes a JavaScript object and then transforms it into a JSON string.
+* Strings are useful for transporting data from a client to a server through storing or passing information in a lightweight way.
+
+```
+let obj = {"first_name" : "Sammy", "last_name" : "Shark", "location" : "Ocean"}
+let s = JSON.stringify(obj)
+//if we work with s, we’ll have the JSON available to us as a string rather than an object.
+'{"first_name" : "Sammy", "last_name" : "Shark", "location" : "Ocean"}'
+```
+* Strings are useful for transporting but you’ll want to be able to convert them back to a JSON object on the client and/or the server side.
 * JSON.parse() takes a JSON string and then transforms it into a JavaScript object.
 
+```
+let o = JSON.parse(s)
+// we would have the object o to work with, which would be identical to the object obj.
+```
+* Another example,
 ```
 const myObject = {
   dog: "🐕",
@@ -560,8 +599,6 @@ request.onload = function () {
 request.send()
 ```
 
-**JavaScript Event Types**
 
-* 
 
 
