@@ -599,6 +599,21 @@ request.onload = function () {
 request.send()
 ```
 
+**JavaScript Hoisting**
+
+* In JavaScript, a variable can be declared after it has been used.
+* A variable can be used before it has been declared.
+
+```
+x = 5; // Assign 5 to x
+
+elem = document.getElementById("demo"); // Find an element
+elem.innerHTML = x;                     // Display x in the element
+
+var x; // Declare x
+```
+**JavaScript only hoists declarations, not initializations**
+
 
 
 
