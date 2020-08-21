@@ -614,6 +614,24 @@ var x; // Declare x
 ```
 **JavaScript only hoists declarations, not initializations**
 
+**Searching for a String in a String**
+
+* The search() method searches a string for a specified value and returns the position of the match
+
+```
+var str = "Please locate where 'locate' occurs!";
+var pos = str.search("locate");
+```
+* The search() method cannot take a second start position argument.
+* The indexOf() method cannot take powerful search values (regular expressions).
+
+**Extracting String Parts**
+
+* There are 3 methods for extracting a part of a string:
+* slice(start, end)
+* substring(start, end)
+* substr(start, length)
+
 
 
 
